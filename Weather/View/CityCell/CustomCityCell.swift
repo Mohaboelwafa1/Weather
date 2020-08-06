@@ -15,7 +15,6 @@ class CustomCityCell : UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var tempretureLabel: UILabel!
-    @IBOutlet weak var backGroundImage: UIImageView!
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -26,11 +25,13 @@ class CustomCityCell : UITableViewCell {
         // TODO: -MH- Add background
     }
 
-
     func setModel(model : CityCellModel)   {
         self.timeLabel.text = String(describing: model.currentTime)
         self.cityNameLabel.text = String(describing: model.cityName)
         self.tempretureLabel.text = String(describing: model.tempreture)
-        self.backGroundImage.kf.setImage(with: URL(string: model.backGroundImage))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+        imageView.kf.setImage(with: URL(string: model.backGroundImage))
+        self.backgroundView = UIView()
+        self.backgroundView!.addSubview(imageView)
     }
 }

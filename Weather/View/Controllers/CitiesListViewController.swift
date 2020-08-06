@@ -20,8 +20,6 @@ class CitiesListViewController: UIViewController {
         listOfCitiesTable.register(UINib(nibName: "CustomCityCell",bundle: nil), forCellReuseIdentifier: "CustomCityCell")
     }
 
-
-
 }
 extension CitiesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +36,10 @@ extension CitiesListViewController : UITableViewDataSource {
         (cell as! CustomCityCell).setModel(model: model)
         return cell
 
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 
 
