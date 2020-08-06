@@ -1,2 +1,3 @@
 # Weather
-MVVM
+MVVM Pattern used.
+
