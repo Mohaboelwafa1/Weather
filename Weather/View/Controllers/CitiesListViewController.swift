@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class CitiesListViewController: UIViewController {
 
     @IBOutlet weak var listOfCitiesTable : UITableView!
     var citiesListViewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
     var citiesList : [CitiesResponseModel] = [CitiesResponseModel]()
+    var distinictCitiesList : Results<CitiesDBModel>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,26 @@ class CitiesListViewController: UIViewController {
             self.citiesListViewModel.getCitiesList(completionHandler: {
                 (result, statusCode, errorModel)in
                 self.citiesList = result
+
+
+                let realm = try! Realm()
+
+                for city in self.citiesList {
+                    let cityModel = CitiesDBModel()
+                    cityModel.date = city.date
+                    cityModel.cityName = city.city?.name
+                    cityModel.cityPicture = city.city?.picture
+                    cityModel.tempType = city.tempType
+                    cityModel.temp = city.temp ?? 0
+                    try! realm.write {
+                        realm.add(cityModel)
+                    }
+                }
+
+
+                self.distinictCitiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"])
                 self.listOfCitiesTable.reloadData()
+
             })
         }
 
@@ -33,16 +54,16 @@ class CitiesListViewController: UIViewController {
 }
 extension CitiesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.citiesList.count
+        return self.distinictCitiesList?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.listOfCitiesTable!.dequeueReusableCell(withIdentifier: "CustomCityCell")! as! CustomCityCell
         var model : CityCellModel = CityCellModel()
-        model.cityName = self.citiesList[indexPath.row].city?.name ?? "Loading ..."
-        model.currentTime = self.citiesList[indexPath.row].date ?? "Loading ..."
-        model.tempreture = "\(String(describing: self.citiesList[indexPath.row].temp!))"
-        model.backGroundImage = self.citiesList[indexPath.row].city?.picture ?? ""
+        model.cityName = self.distinictCitiesList?[indexPath.row].cityName ?? "Loading ..."
+        model.currentTime = self.distinictCitiesList?[indexPath.row].date ?? "Loading ..."
+        model.tempreture = "\(self.distinictCitiesList?[indexPath.row].temp ?? 0)"
+        model.backGroundImage = self.distinictCitiesList?[indexPath.row].cityPicture ?? ""
         (cell as! CustomCityCell).setModel(model: model)
         return cell
     }

@@ -11,7 +11,7 @@ target 'Weather' do
   pod 'SwiftLint', '~> 0.36.0'
   pod 'Kingfisher', '~> 5.0'
   pod 'SwiftyJSON', '~> 4.0'
-  # pod 'RealmSwift', '~> 3.20.0'
+  pod 'RealmSwift', '~> 3.20.0'
   pod 'ReachabilitySwift', '~> 5.0.0'
   # pod 'Sentry', '~> 4.4.1'
   # pod 'netfox'
