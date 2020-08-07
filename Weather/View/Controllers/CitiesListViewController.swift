@@ -15,7 +15,6 @@ class CitiesListViewController: UIViewController {
 
     @IBOutlet weak var listOfCitiesTable : UITableView!
     var citiesListViewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
-    var citiesList : [CitiesResponseModel] = [CitiesResponseModel]()
     var distinictCitiesList : Results<CitiesDBModel>?
 
     override func viewDidLoad() {
@@ -25,27 +24,8 @@ class CitiesListViewController: UIViewController {
         DispatchQueue.global(qos: .background).async {
             self.citiesListViewModel.getCitiesList(completionHandler: {
                 (result, statusCode, errorModel)in
-                self.citiesList = result
-
-
-                let realm = try! Realm()
-
-                for city in self.citiesList {
-                    let cityModel = CitiesDBModel()
-                    cityModel.date = city.date
-                    cityModel.cityName = city.city?.name
-                    cityModel.cityPicture = city.city?.picture
-                    cityModel.tempType = city.tempType
-                    cityModel.temp = city.temp ?? 0
-                    try! realm.write {
-                        realm.add(cityModel)
-                    }
-                }
-
-
-                self.distinictCitiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"])
+                self.distinictCitiesList = result
                 self.listOfCitiesTable.reloadData()
-
             })
         }
 
