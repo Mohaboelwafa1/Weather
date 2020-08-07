@@ -14,6 +14,7 @@ class CitiesListViewController: UIViewController {
 
     @IBOutlet weak var listOfCitiesTable : UITableView!
     var citiesListViewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
+    var citiesList : [CitiesResponseModel] = [CitiesResponseModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,36 +22,31 @@ class CitiesListViewController: UIViewController {
         listOfCitiesTable.register(UINib(nibName: "CustomCityCell",bundle: nil), forCellReuseIdentifier: "CustomCityCell")
         self.citiesListViewModel.getCitiesList(completionHandler: {
             (result, statusCode, errorModel)in
-            print("----------\(result)")
-            print("000000\(statusCode)")
-            print("xxxxxx\(errorModel)")
-
+            self.citiesList = result
+            self.listOfCitiesTable.reloadData()
         })
     }
 
 }
 extension CitiesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.citiesList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.listOfCitiesTable!.dequeueReusableCell(withIdentifier: "CustomCityCell")! as! CustomCityCell
         var model : CityCellModel = CityCellModel()
-        model.cityName = "Amsterdam"
-        model.currentTime = "12.00"
-        model.tempreture = "18 c"
-        model.backGroundImage = "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/budapest.jpg?alt=media&token=d2bff16e-6e11-433c-89ee-3481043636b5"
+        model.cityName = self.citiesList[indexPath.row].city?.name ?? "Loading ..."
+        model.currentTime = self.citiesList[indexPath.row].date ?? "Loading ..."
+        model.tempreture = "\(String(describing: self.citiesList[indexPath.row].temp!))"
+        model.backGroundImage = self.citiesList[indexPath.row].city?.picture ?? ""
         (cell as! CustomCityCell).setModel(model: model)
         return cell
-
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-
-
 }
 
 

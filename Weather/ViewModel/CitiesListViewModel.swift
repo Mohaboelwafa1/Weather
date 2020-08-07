@@ -32,7 +32,6 @@ class CitiesListViewModel_Model: NSObject, CitiesListViewModel_View {
     func getCitiesList(completionHandler: @escaping ([CitiesResponseModel], Int, Error_Response_Model) -> Void) {
            APIManager().GetCitiesList(completionHandler: {
                (result, statusCode, errorModel) in
-            print("--- \(result.first)")
                completionHandler(result, statusCode, errorModel)
            })
        }

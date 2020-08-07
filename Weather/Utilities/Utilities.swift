@@ -14,7 +14,6 @@ class Utilities
     private init() {}
     static let shared = Utilities()
 
-
     //MARK:- Check Internet
     /// Check if there are internet or not
     func isConnectedToNetwork() -> Bool {

@@ -10,7 +10,6 @@
 		21703D043344110517BF5E4E /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC891B9BC9CFF80C3EF5976 /* Pods_Weather.framework */; };
 		4CF92C2C24DC90BF0095C45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */; };
 		4CF92C2E24DC90BF0095C45A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */; };
-		4CF92C3024DC90BF0095C45A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2F24DC90BF0095C45A /* ViewController.swift */; };
 		4CF92C3324DC90BF0095C45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF92C3124DC90BF0095C45A /* Main.storyboard */; };
 		4CF92C3624DC90BF0095C45A /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C3424DC90BF0095C45A /* Weather.xcdatamodeld */; };
 		4CF92C3824DC90C20095C45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF92C3724DC90C20095C45A /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 		4CF92C6D24DCBC360095C45A /* CustomCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF92C6C24DCBC360095C45A /* CustomCityCell.xib */; };
 		4CF92C6F24DCBFF10095C45A /* CityCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C6E24DCBFF10095C45A /* CityCellModel.swift */; };
 		4CF92C7124DCC96F0095C45A /* CitiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C7024DCC96F0095C45A /* CitiesListViewModel.swift */; };
-		4CF92C7324DCC9D40095C45A /* GetCitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C7224DCC9D40095C45A /* GetCitiesList.swift */; };
 		4CF92C7524DCCBD80095C45A /* Error_Response_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C7424DCCBD80095C45A /* Error_Response_Model.swift */; };
 		4CF92C7824DCCE890095C45A /* OperationalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C7724DCCE890095C45A /* OperationalRepository.swift */; };
 		4CF92C7B24DCCEE90095C45A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C7A24DCCEE90095C45A /* Utilities.swift */; };
@@ -56,7 +54,6 @@
 		4CF92C2824DC90BF0095C45A /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4CF92C2F24DC90BF0095C45A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CF92C3224DC90BF0095C45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CF92C3524DC90BF0095C45A /* Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather.xcdatamodel; sourceTree = "<group>"; };
 		4CF92C3724DC90C20095C45A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +72,6 @@
 		4CF92C6C24DCBC360095C45A /* CustomCityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCityCell.xib; sourceTree = "<group>"; };
 		4CF92C6E24DCBFF10095C45A /* CityCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellModel.swift; sourceTree = "<group>"; };
 		4CF92C7024DCC96F0095C45A /* CitiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewModel.swift; sourceTree = "<group>"; };
-		4CF92C7224DCC9D40095C45A /* GetCitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesList.swift; sourceTree = "<group>"; };
 		4CF92C7424DCCBD80095C45A /* Error_Response_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error_Response_Model.swift; sourceTree = "<group>"; };
 		4CF92C7724DCCE890095C45A /* OperationalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationalRepository.swift; sourceTree = "<group>"; };
 		4CF92C7A24DCCEE90095C45A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -164,7 +160,6 @@
 				4CF92C5E24DCB0EA0095C45A /* Model */,
 				4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */,
 				4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */,
-				4CF92C2F24DC90BF0095C45A /* ViewController.swift */,
 				4CF92C3724DC90C20095C45A /* Assets.xcassets */,
 				4CF92C3924DC90C20095C45A /* LaunchScreen.storyboard */,
 				4CF92C3C24DC90C20095C45A /* Info.plist */,
@@ -215,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				4CF92C7024DCC96F0095C45A /* CitiesListViewModel.swift */,
-				4CF92C7224DCC9D40095C45A /* GetCitiesList.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -507,7 +501,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF92C3624DC90BF0095C45A /* Weather.xcdatamodeld in Sources */,
-				4CF92C3024DC90BF0095C45A /* ViewController.swift in Sources */,
 				4CF92C7B24DCCEE90095C45A /* Utilities.swift in Sources */,
 				4CF92C6F24DCBFF10095C45A /* CityCellModel.swift in Sources */,
 				4CF92C7124DCC96F0095C45A /* CitiesListViewModel.swift in Sources */,
@@ -517,7 +510,6 @@
 				4CF92C6424DCB1EF0095C45A /* City.swift in Sources */,
 				4CF92C7824DCCE890095C45A /* OperationalRepository.swift in Sources */,
 				4CF92C2C24DC90BF0095C45A /* AppDelegate.swift in Sources */,
-				4CF92C7324DCC9D40095C45A /* GetCitiesList.swift in Sources */,
 				4CF92C7D24DCD2010095C45A /* APIManager.swift in Sources */,
 				4CF92C7F24DCD2810095C45A /* BaseApi.swift in Sources */,
 				4CF92C2E24DC90BF0095C45A /* SceneDelegate.swift in Sources */,

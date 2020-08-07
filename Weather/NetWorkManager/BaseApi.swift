@@ -15,19 +15,13 @@ struct BaseApi {
 }
 
 enum EndPoint {
-
     case citiesList
-
     var path:String
     {
         switch self {
-
         // GET
         case .citiesList:
             return "/weather"
-
         }
-
     }
-
 }

@@ -22,7 +22,6 @@ extension OperationalRepository {
                 switch response.result {
                 case .success(_):
                     if let json = response.data {
-                        print("=====\(json)")
                         completionHandler(response.data as AnyObject, (response.response?.statusCode)! , response.data as AnyObject)
                     }
                 case .failure(_): break
