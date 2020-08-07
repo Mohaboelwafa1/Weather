@@ -20,11 +20,14 @@ class CitiesListViewController: UIViewController {
         super.viewDidLoad()
         listOfCitiesTable.register(CustomCityCell.self, forCellReuseIdentifier: "CustomCityCell")
         listOfCitiesTable.register(UINib(nibName: "CustomCityCell",bundle: nil), forCellReuseIdentifier: "CustomCityCell")
-        self.citiesListViewModel.getCitiesList(completionHandler: {
-            (result, statusCode, errorModel)in
-            self.citiesList = result
-            self.listOfCitiesTable.reloadData()
-        })
+        DispatchQueue.global(qos: .background).async {
+            self.citiesListViewModel.getCitiesList(completionHandler: {
+                (result, statusCode, errorModel)in
+                self.citiesList = result
+                self.listOfCitiesTable.reloadData()
+            })
+        }
+
     }
 
 }
