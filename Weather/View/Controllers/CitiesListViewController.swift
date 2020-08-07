@@ -13,11 +13,19 @@ import Kingfisher
 class CitiesListViewController: UIViewController {
 
     @IBOutlet weak var listOfCitiesTable : UITableView!
+    var citiesListViewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         listOfCitiesTable.register(CustomCityCell.self, forCellReuseIdentifier: "CustomCityCell")
         listOfCitiesTable.register(UINib(nibName: "CustomCityCell",bundle: nil), forCellReuseIdentifier: "CustomCityCell")
+        self.citiesListViewModel.getCitiesList(completionHandler: {
+            (result, statusCode, errorModel)in
+            print("----------\(result)")
+            print("000000\(statusCode)")
+            print("xxxxxx\(errorModel)")
+
+        })
     }
 
 }

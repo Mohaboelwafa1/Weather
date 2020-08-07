@@ -1,5 +1,5 @@
 //
-//  CitiesModel.swift
+//  CitiesResponseModel.swift
 //  Weather
 //
 //  Created by Mohammed hassan on 8/6/20.
@@ -21,6 +21,13 @@ struct CitiesResponseModel : Codable {
         case temp = "temp"
     }
 
+    init(){
+        date = "date"
+        city = City()
+        tempType = "tempType"
+        temp = 0.0
+    }
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         date = try values.decodeIfPresent(String.self, forKey: .date)
@@ -28,5 +35,14 @@ struct CitiesResponseModel : Codable {
         tempType = try values.decodeIfPresent(String.self, forKey: .tempType)
         temp = try values.decodeIfPresent(Double.self, forKey: .temp)
     }
+
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(date, forKey: "date")
+        aCoder.encode(city, forKey: "city")
+        aCoder.encode(tempType, forKey: "tempType")
+        aCoder.encode(temp, forKey: "temp")
+    }
+
+
 
 }

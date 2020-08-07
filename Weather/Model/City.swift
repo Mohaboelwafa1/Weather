@@ -17,10 +17,20 @@ struct City : Codable {
         case picture = "picture"
     }
 
+    init() {
+        name = ""
+        picture = ""
+    }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decodeIfPresent(String.self, forKey: .name)
         picture = try values.decodeIfPresent(String.self, forKey: .picture)
+    }
+
+    func encode(with aCoder: NSCoder) {
+
+    aCoder.encode(name, forKey: "name")
+    aCoder.encode(picture, forKey: "picture")
     }
 
 }

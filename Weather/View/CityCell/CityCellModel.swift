@@ -20,7 +20,6 @@ struct CityCellModel : Codable {
         case cityName = "cityName"
         case tempreture = "tempreture"
         case backGroundImage = "backGroundImage"
-
     }
 
     init() {
@@ -37,5 +36,4 @@ struct CityCellModel : Codable {
         tempreture = try values.decodeIfPresent(String.self, forKey: .tempreture)!
         backGroundImage = try values.decodeIfPresent(String.self, forKey: .backGroundImage)!
     }
-
 }

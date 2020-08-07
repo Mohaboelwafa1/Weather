@@ -22,7 +22,6 @@ class CustomCityCell : UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // TODO: -MH- Add background
     }
 
     func setModel(model : CityCellModel)   {
