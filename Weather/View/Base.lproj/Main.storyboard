@@ -45,9 +45,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UyP-lM-cMO">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Kc-EU-ehu">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            </imageView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UyP-lM-cMO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="bUd-Ap-3ow"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vk2-i4-J06"/>
@@ -57,14 +61,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UyP-lM-cMO" secondAttribute="trailing" id="1kv-NH-IPc"/>
+                            <constraint firstItem="0Kc-EU-ehu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="HPL-IN-BzS"/>
                             <constraint firstItem="UyP-lM-cMO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HUY-VC-Wgg"/>
                             <constraint firstItem="UyP-lM-cMO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k0b-RB-iMt"/>
                             <constraint firstItem="UyP-lM-cMO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nVS-HJ-yFV"/>
+                            <constraint firstItem="0Kc-EU-ehu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="uqp-5J-sIi"/>
+                            <constraint firstItem="0Kc-EU-ehu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="v47-UF-Hiw"/>
+                            <constraint firstItem="0Kc-EU-ehu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wk8-cA-jEr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qly-WH-6kM"/>
                     <connections>
+                        <outlet property="backGroundImage" destination="0Kc-EU-ehu" id="Qci-ju-js0"/>
                         <outlet property="listOfCitiesTable" destination="UyP-lM-cMO" id="2f0-h5-y5d"/>
                     </connections>
                 </viewController>
@@ -134,7 +143,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RpR-Cj-D26" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uYj-Gs-BDa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

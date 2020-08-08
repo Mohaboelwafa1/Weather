@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="430" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 c" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-ah-JhK">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-ah-JhK">
                         <rect key="frame" x="300" y="35" width="110" height="150"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="110" id="cNX-mj-e9X"/>
@@ -40,6 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="EWS-ah-JhK" firstAttribute="top" secondItem="RsN-dx-mJF" secondAttribute="top" constant="35" id="5ZJ-gs-8Ot"/>
                     <constraint firstItem="eza-YX-8Oz" firstAttribute="leading" secondItem="RsN-dx-mJF" secondAttribute="leading" constant="20" id="FuA-lQ-xEm"/>

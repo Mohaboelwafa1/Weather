@@ -48,7 +48,7 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
 
             model.cityName = row.cityName ?? "Loading ..."
             model.currentTime = self.getDate(date: dateAndTime)
-            model.tempreture = "\(celsuisDegree)"
+            model.tempreture = "\(celsuisDegree) °"
             model.backGroundImage = row.cityPicture ?? ""
             cellsModel.append(model)
         }

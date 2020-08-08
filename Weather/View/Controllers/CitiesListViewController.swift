@@ -14,17 +14,25 @@ import Toast_Swift
 class CitiesListViewController: UIViewController {
 
     @IBOutlet weak var listOfCitiesTable : UITableView!
+    @IBOutlet weak var backGroundImage: UIImageView!
+
     private let refreshControl = UIRefreshControl()
     var citiesListViewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
     var cellsModel: [CityCellModel] = [CityCellModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUTableView()
+        setupView()
         fetchWeatherData()
     }
 
-    func setUTableView() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listOfCitiesTable.backgroundColor = .clear
+        self.listOfCitiesTable.isOpaque = false;
+    }
+
+    func setupView() {
         self.navigationItem.setHidesBackButton(true, animated: true)
 
         listOfCitiesTable.register(CustomCityCell.self, forCellReuseIdentifier: "CustomCityCell")
@@ -33,11 +41,15 @@ class CitiesListViewController: UIViewController {
         listOfCitiesTable.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+
+        self.backGroundImage.image = UIImage(named: "NightBG")
+        self.backGroundImage.alpha = 0.05
     }
 
     func fetchWeatherData() {
         _ = citiesListViewModel.getCitiesListOffline()
         cellsModel = citiesListViewModel.prepareCellModel()
+        self.listOfCitiesTable.isHidden = false
         self.refreshControl.endRefreshing()
     }
 
@@ -87,5 +99,9 @@ extension CitiesListViewController : UITableViewDelegate {
         let cityDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "CityDetailsViewController") as! CityDetailsViewController
         cityDetailsViewController.cityName = self.cellsModel[indexPath.row].cityName
         self.navigationController?.pushViewController(cityDetailsViewController, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
     }
 }
