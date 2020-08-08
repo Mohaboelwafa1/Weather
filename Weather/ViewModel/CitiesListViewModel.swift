@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 protocol CitiesListViewModel_View {
@@ -52,7 +51,6 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
             model.backGroundImage = row.cityPicture ?? ""
             cellsModel.append(model)
         }
-
         return cellsModel
     }
 

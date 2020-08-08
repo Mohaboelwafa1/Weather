@@ -6,10 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import RealmSwift
-import Toast_Swift
 
 class CitiesListViewController: UIViewController {
 
@@ -65,7 +62,7 @@ class CitiesListViewController: UIViewController {
             }
         } else {
             self.refreshControl.endRefreshing()
-            _ = Utilities.shared.showConnectionError(
+            Utilities.shared.showConnectionError(
                 view: self,
                 title: "Connection error",
                 duration: 1.0,

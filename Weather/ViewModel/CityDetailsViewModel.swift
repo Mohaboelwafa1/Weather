@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 protocol CityDetailsViewModel_View {
@@ -15,13 +14,11 @@ protocol CityDetailsViewModel_View {
     func getImageName(degree: Double) -> String
     var cellsModel : [CustomTempDegreeCellModel] { get set }
     var degreesList : Results<CitiesDBModel>? { get set }
-
 }
 
 class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View {
     var degreesList: Results<CitiesDBModel>?
     var cellsModel: [CustomTempDegreeCellModel]
-
 
     override init() {
         cellsModel = [CustomTempDegreeCellModel]()
@@ -50,7 +47,6 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
         return degreesList
     }
 
-
     func getImageName(degree: Double) -> String {
         switch degree {
         case let degree where degree <= 22.5:
@@ -64,8 +60,6 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
         default:
             return"unkown"
         }
-
     }
-
 }
 

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 protocol SplashViewModel_View {

@@ -6,10 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import RealmSwift
-import Toast_Swift
 
 class SplashViewController : UIViewController {
 
@@ -32,19 +29,22 @@ class SplashViewController : UIViewController {
                 self.splashViewModel.getCitiesList(completionHandler: {
                     (result, statusCode, errorModel)in
                     if statusCode == 200 {
+                        UserDefaults.standard.set(true, forKey: "launchedBefore")
                         self.goToCitiesListScreen()
                     }
                 })
             }
         } else {
-            let isUserTappedMessage = Utilities.shared.showConnectionError(
+            UserDefaults.standard.set(false, forKey: "launchedBefore")
+            Utilities.shared.showConnectionError(
                 view: self,
                 title: "Connection error",
-                duration: 1.0,
-                message: "Make sure of connection. tap to retry",
+                duration: 2.0,
+                message: "Please make sure of connection. We are trying again",
                 image: "CloudyIcon.png"
             )
-            if isUserTappedMessage {
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.fetchWeatherData()
             }
         }

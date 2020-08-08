@@ -6,8 +6,6 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
-
 struct CityCellModel : Codable {
 
     var currentTime : String

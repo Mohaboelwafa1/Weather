@@ -6,9 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 // CustomTempDegreeCell
 
-import Foundation
 import UIKit
-import Kingfisher
 
 class CustomTempDegreeCell : UITableViewCell {
 

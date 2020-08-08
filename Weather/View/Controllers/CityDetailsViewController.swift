@@ -6,9 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import RealmSwift
 
 class CityDetailsViewController: UIViewController {
 
