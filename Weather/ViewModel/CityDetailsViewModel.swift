@@ -21,7 +21,7 @@ protocol CityDetailsViewModel_View {
 
 }
 
-class CityDetailsViewModel_Model: NSObject, CityDetailsViewModel_View {
+class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View {
     var degreesList: Results<CitiesDBModel>?
     var cellsModel: [CustomTempDegreeCellModel]
 
@@ -53,69 +53,6 @@ class CityDetailsViewModel_Model: NSObject, CityDetailsViewModel_View {
         return degreesList
     }
 
-    func getDate(date: String?) -> String {
-        let isoDate = date!
-        let dateFormatter = ISO8601DateFormatter()
-        let date = dateFormatter.date(from:isoDate)!
-        dateFormatter.formatOptions = .withFullDate
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
-        let month = getMonthName(month: components.month!)
-        return "\(components.day!) \(month)"
-    }
-
-    func getTime(date: String?) -> String {
-        var dayNightMode = "am"
-        let isoDate = date!
-        let dateFormatter = ISO8601DateFormatter()
-        let date = dateFormatter.date(from:isoDate)!
-        dateFormatter.formatOptions = .withFullDate
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
-        if components.hour! >= 12 {
-            dayNightMode = "pm"
-        } else {
-            dayNightMode = "am"
-        }
-
-        if components.hour! > 0 && components.hour! < 10 {
-            return "0\(components.hour!):00 \(dayNightMode)"
-        } else {
-            return "\(components.hour!):00 \(dayNightMode)"
-        }
-
-    }
-
-    func getMonthName(month:Int) -> String {
-        switch month {
-        case 1:
-            return "January"
-        case 2:
-            return "February"
-        case 3:
-            return "March"
-        case 4:
-            return "April"
-        case 5:
-            return "May"
-        case 6:
-            return "June"
-        case 7:
-            return "July"
-        case 8:
-            return "August"
-        case 9:
-            return "September"
-        case 10:
-            return "October"
-        case 11:
-            return "November"
-        case 12:
-            return "December"
-        default:
-            return "Unkown"
-        }
-    }
 
     func getImageName(degree: Double) -> String {
         switch degree {
@@ -133,8 +70,5 @@ class CityDetailsViewModel_Model: NSObject, CityDetailsViewModel_View {
 
     }
 
-    func ConvertTempreture(temp: Double , type: String) -> Double {
-        return Utilities.shared.ConvertTempreture(temp: temp, type: type)
-    }
 }
 
