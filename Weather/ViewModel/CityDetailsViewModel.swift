@@ -12,9 +12,6 @@ import RealmSwift
 protocol CityDetailsViewModel_View {
     func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel]
     func getCityData(cityName: String) -> Results<CitiesDBModel>?
-    func getDate(date: String?) -> String
-    func getTime(date: String?) -> String
-    func ConvertTempreture(temp: Double , type: String) -> Double
     func getImageName(degree: Double) -> String
     var cellsModel : [CustomTempDegreeCellModel] { get set }
     var degreesList : Results<CitiesDBModel>? { get set }

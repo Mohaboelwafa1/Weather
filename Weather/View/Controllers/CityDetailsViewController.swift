@@ -12,12 +12,12 @@ import RealmSwift
 
 class CityDetailsViewController: UIViewController {
 
-    var cityName: String?
     @IBOutlet weak var listOfCityDegrees : UITableView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var backGroundImage: UIImageView!
+    var cityName: String?
     var cityDetailsViewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
-    var cellsModels: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
+    var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,18 +39,18 @@ class CityDetailsViewController: UIViewController {
     }
 
     func fetchData(){
-        cellsModels = cityDetailsViewModel.prepareCellModel(cityName: cityName!)
+        cellsModel = cityDetailsViewModel.prepareCellModel(cityName: cityName!)
     }
 }
 
 extension CityDetailsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cellsModels.count
+        return self.cellsModel.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.listOfCityDegrees!.dequeueReusableCell(withIdentifier: "CustomTempDegreeCell")! as! CustomTempDegreeCell
-        (cell as! CustomTempDegreeCell).setModel(model: cellsModels[indexPath.row])
+        (cell as! CustomTempDegreeCell).setModel(model: cellsModel[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }

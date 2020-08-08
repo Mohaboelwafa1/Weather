@@ -13,7 +13,7 @@ protocol SplashViewModel_View {
 
     var citiesResponseModel: [CitiesResponseModel] { get }
     func getCitiesList(completionHandler: @escaping (
-        _ userInfoResponseModel:Results<CitiesDBModel>?,
+        _ ResponseModel:Results<CitiesDBModel>?,
         _ statusCode : Int,
         _ error_Response_Model:Error_Response_Model
         ) -> Void)
