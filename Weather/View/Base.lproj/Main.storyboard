@@ -15,15 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEy-vw-86S">
-                                <rect key="frame" x="177" y="438" width="61" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenBG" translatesAutoresizingMaskIntoConstraints="NO" id="xKe-PM-pAK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xKe-PM-pAK" firstAttribute="top" secondItem="0DW-Yl-ofZ" secondAttribute="top" id="2lK-2t-9zQ"/>
+                            <constraint firstItem="xKe-PM-pAK" firstAttribute="trailing" secondItem="qOv-Qx-rat" secondAttribute="trailing" id="EKX-FK-OwV"/>
+                            <constraint firstItem="xKe-PM-pAK" firstAttribute="leading" secondItem="qOv-Qx-rat" secondAttribute="leading" id="Fg2-o6-sFF"/>
+                            <constraint firstAttribute="bottom" secondItem="xKe-PM-pAK" secondAttribute="bottom" id="fuE-5w-6Ah"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qOv-Qx-rat"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ava-iO-quV"/>
@@ -132,4 +134,7 @@
             <point key="canvasLocation" x="973.91304347826099" y="53.571428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreenBG" width="626" height="626"/>
+    </resources>
 </document>

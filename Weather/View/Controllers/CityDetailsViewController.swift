@@ -18,10 +18,8 @@ class CityDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUTableView()
         getCityData()
-
     }
 
     func getCityData(){
@@ -29,10 +27,8 @@ class CityDetailsViewController: UIViewController {
         degreesList = realm.objects(CitiesDBModel.self).filter("cityName = '\(cityName!)'").sorted(byKeyPath: "date", ascending: true)
     }
 
-
     func setUTableView() {
         listOfCityDegrees.register(CustomTempDegreeCell.self, forCellReuseIdentifier: "CustomTempDegreeCell")
-        //listOfCityDegrees.register(UINib(nibName: "CustomTempDegreeCell",bundle: nil), forCellReuseIdentifier: "CustomTempDegreeCell")
         self.listOfCityDegrees.register(UINib(nibName: "CustomTempDegreeCell",bundle: nil), forCellReuseIdentifier: "CustomTempDegreeCell")
     }
 

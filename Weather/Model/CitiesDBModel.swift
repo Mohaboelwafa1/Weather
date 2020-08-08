@@ -16,5 +16,3 @@ class CitiesDBModel : Object {
     @objc dynamic var tempType: String?
     @objc dynamic var temp: Double = 0
 }
-
-
