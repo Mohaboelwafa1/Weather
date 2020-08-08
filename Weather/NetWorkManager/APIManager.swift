@@ -6,10 +6,6 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-
-import Foundation
-import UIKit
-import CoreLocation
 import SwiftyJSON
 
 class APIManager: NSObject, OperationalRepository {

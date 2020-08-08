@@ -12,7 +12,6 @@
 		4CF92C2C24DC90BF0095C45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */; };
 		4CF92C2E24DC90BF0095C45A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */; };
 		4CF92C3324DC90BF0095C45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF92C3124DC90BF0095C45A /* Main.storyboard */; };
-		4CF92C3624DC90BF0095C45A /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C3424DC90BF0095C45A /* Weather.xcdatamodeld */; };
 		4CF92C3824DC90C20095C45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF92C3724DC90C20095C45A /* Assets.xcassets */; };
 		4CF92C3B24DC90C20095C45A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF92C3924DC90C20095C45A /* LaunchScreen.storyboard */; };
 		4CF92C4624DC90C20095C45A /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C4524DC90C20095C45A /* WeatherTests.swift */; };
@@ -57,7 +56,6 @@
 		4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4CF92C3224DC90BF0095C45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4CF92C3524DC90BF0095C45A /* Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather.xcdatamodel; sourceTree = "<group>"; };
 		4CF92C3724DC90C20095C45A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CF92C3A24DC90C20095C45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CF92C3C24DC90C20095C45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				4CF92C3724DC90C20095C45A /* Assets.xcassets */,
 				4CF92C3924DC90C20095C45A /* LaunchScreen.storyboard */,
 				4CF92C3C24DC90C20095C45A /* Info.plist */,
-				4CF92C3424DC90BF0095C45A /* Weather.xcdatamodeld */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -504,7 +501,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C375E6E24DE11F400651495 /* CitiesDBModel.swift in Sources */,
-				4CF92C3624DC90BF0095C45A /* Weather.xcdatamodeld in Sources */,
 				4CF92C7B24DCCEE90095C45A /* Utilities.swift in Sources */,
 				4CF92C6F24DCBFF10095C45A /* CityCellModel.swift in Sources */,
 				4CF92C7124DCC96F0095C45A /* CitiesListViewModel.swift in Sources */,
@@ -854,19 +850,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4CF92C3424DC90BF0095C45A /* Weather.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4CF92C3524DC90BF0095C45A /* Weather.xcdatamodel */,
-			);
-			currentVersion = 4CF92C3524DC90BF0095C45A /* Weather.xcdatamodel */;
-			path = Weather.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4CF92C2024DC90BF0095C45A /* Project object */;
 }

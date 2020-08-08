@@ -6,8 +6,6 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-import Foundation
-import UIKit
 import Alamofire
 
 protocol OperationalRepository {}
@@ -21,7 +19,7 @@ extension OperationalRepository {
                 response in
                 switch response.result {
                 case .success(_):
-                    if let json = response.data {
+                    if response.data != nil {
                         completionHandler(response.data as AnyObject, (response.response?.statusCode)! , response.data as AnyObject)
                     }
                 case .failure(_): break

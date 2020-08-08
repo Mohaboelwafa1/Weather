@@ -5,7 +5,6 @@
 //  Created by Mohammed hassan on 8/7/20.
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
-
 import Foundation
 import SystemConfiguration
 
@@ -14,8 +13,6 @@ class Utilities
     private init() {}
     static let shared = Utilities()
 
-    //MARK:- Check Internet
-    /// Check if there are internet or not
     func isConnectedToNetwork() -> Bool {
 
         var zeroAddress = sockaddr_in()
@@ -36,6 +33,29 @@ class Utilities
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
 
+    }
+
+    func ConvertTempreture(temp: Double , type: String) -> Double {
+        switch type {
+        case "C":
+            return temp
+        case "K":
+            return  Double(round(100*(temp - 273.15))/100)
+        case "F":
+            return  Double(round(100*((temp - 32) / 1.8))/100)
+        default:
+            return temp
+        }
+    }
+
+    func getDate(date: String?) -> String {
+        let isoDate = date!
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from:isoDate)!
+        dateFormatter.formatOptions = .withFullDate
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
+        return "\(components.day!)/\(components.month!)"
     }
 
 }

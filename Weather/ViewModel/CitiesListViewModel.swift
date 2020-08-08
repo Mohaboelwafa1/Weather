@@ -12,32 +12,16 @@ import RealmSwift
 protocol CitiesListViewModel_View {
 
     var citiesResponseModel: [CitiesResponseModel] { get }
-    // Get list of cities
     func getCitiesList(completionHandler: @escaping (
         _ userInfoResponseModel:Results<CitiesDBModel>?,
         _ statusCode : Int,
         _ error_Response_Model:Error_Response_Model
         ) -> Void)
-
 }
-
-enum TempType: String{
-    case Celsius = "C"
-    case Kelvin = "K"
-    case Fahrenheit = "F"
-}
-
-enum ASCIIControlCharacter: Character {
-    case tab = "\t"
-    case lineFeed = "\n"
-    case carriageReturn = "\r"
-}
-
 
 class CitiesListViewModel_Model: NSObject, CitiesListViewModel_View {
 
     var citiesResponseModel: [CitiesResponseModel]
-
     override init() {
         citiesResponseModel = [CitiesResponseModel]()
         super.init()
