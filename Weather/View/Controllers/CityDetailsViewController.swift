@@ -58,7 +58,7 @@ extension CityDetailsViewController : UITableViewDataSource {
 
         model.currentTime = cityDetailsViewModel.getTime(date: dateAndTime)
         model.todayDate = cityDetailsViewModel.getDate(date: dateAndTime)
-        model.tempreture = "\(celsuisDegree)"
+        model.tempreture = "\(celsuisDegree) °"
         model.iconImage = cityDetailsViewModel.getImageName(degree: celsuisDegree)
 
         (cell as! CustomTempDegreeCell).setModel(model: model)
