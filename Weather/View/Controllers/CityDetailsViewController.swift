@@ -17,6 +17,7 @@ class CityDetailsViewController: UIViewController {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var backGroundImage: UIImageView!
     var degreesList : Results<CitiesDBModel>?
+    var cityDetailsViewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +39,7 @@ class CityDetailsViewController: UIViewController {
     }
 
     func getCityData(){
-        let realm = try! Realm()
-        degreesList = realm.objects(CitiesDBModel.self).filter("cityName = '\(cityName!)'").sorted(byKeyPath: "date", ascending: true)
+        degreesList = cityDetailsViewModel.getCityData(cityName: cityName!)
     }
 
 }
@@ -52,12 +52,18 @@ extension CityDetailsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.listOfCityDegrees!.dequeueReusableCell(withIdentifier: "CustomTempDegreeCell")! as! CustomTempDegreeCell
         var model : CustomTempDegreeCellModel = CustomTempDegreeCellModel()
-        model.currentTime = (self.degreesList?[indexPath.row].date)!
-        model.todayDate = (self.degreesList?[indexPath.row].date)!
-        model.tempreture = "\(self.degreesList?[indexPath.row].temp ?? 0)"
-        model.iconImage = "CloudyIcon"
+        let dateAndTime = (self.degreesList?[indexPath.row].date)!
+        let degree = self.degreesList?[indexPath.row].temp ?? 0
+        let celsuisDegree = cityDetailsViewModel.ConvertTempreture(temp: degree, type: (self.degreesList?[indexPath.row].tempType)!)
+
+        model.currentTime = cityDetailsViewModel.getTime(date: dateAndTime)
+        model.todayDate = cityDetailsViewModel.getDate(date: dateAndTime)
+        model.tempreture = "\(celsuisDegree)"
+        model.iconImage = cityDetailsViewModel.getImageName(degree: celsuisDegree)
+
         (cell as! CustomTempDegreeCell).setModel(model: model)
         cell.selectionStyle = .none
+
         return cell
     }
 

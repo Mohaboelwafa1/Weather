@@ -60,6 +60,16 @@ class Utilities
         return "\(components.day!)/\(components.month!)"
     }
 
+    func getTime(date: String?) -> String {
+        let isoDate = date!
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from:isoDate)!
+        dateFormatter.formatOptions = .withFullDate
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
+        return "\(components.hour!)"
+    }
+
     func ShowIndicator(title: String, message: String, controller: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
