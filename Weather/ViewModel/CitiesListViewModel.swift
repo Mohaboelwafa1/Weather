@@ -61,7 +61,7 @@ class CitiesListViewModel_Model: NSObject, CitiesListViewModel_View {
                 }
             }
 
-            let unRepeatedCitiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"])
+            let unRepeatedCitiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
             completionHandler(unRepeatedCitiesList, statusCode, errorModel)
         })
     }
