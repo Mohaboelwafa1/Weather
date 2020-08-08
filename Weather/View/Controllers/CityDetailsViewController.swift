@@ -16,13 +16,13 @@ class CityDetailsViewController: UIViewController {
     @IBOutlet weak var listOfCityDegrees : UITableView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var backGroundImage: UIImageView!
-    var degreesList : Results<CitiesDBModel>?
     var cityDetailsViewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
+    var cellsModels: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        getCityData()
+        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,32 +38,20 @@ class CityDetailsViewController: UIViewController {
         self.backGroundImage.image = UIImage(named: "NightBG")
     }
 
-    func getCityData(){
-        degreesList = cityDetailsViewModel.getCityData(cityName: cityName!)
+    func fetchData(){
+        cellsModels = cityDetailsViewModel.prepareCellModel(cityName: cityName!)
     }
-
 }
 
 extension CityDetailsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.degreesList?.count ?? 0
+        return self.cellsModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.listOfCityDegrees!.dequeueReusableCell(withIdentifier: "CustomTempDegreeCell")! as! CustomTempDegreeCell
-        var model : CustomTempDegreeCellModel = CustomTempDegreeCellModel()
-        let dateAndTime = (self.degreesList?[indexPath.row].date)!
-        let degree = self.degreesList?[indexPath.row].temp ?? 0
-        let celsuisDegree = cityDetailsViewModel.ConvertTempreture(temp: degree, type: (self.degreesList?[indexPath.row].tempType)!)
-
-        model.currentTime = cityDetailsViewModel.getTime(date: dateAndTime)
-        model.todayDate = cityDetailsViewModel.getDate(date: dateAndTime)
-        model.tempreture = "\(celsuisDegree) °"
-        model.iconImage = cityDetailsViewModel.getImageName(degree: celsuisDegree)
-
-        (cell as! CustomTempDegreeCell).setModel(model: model)
+        (cell as! CustomTempDegreeCell).setModel(model: cellsModels[indexPath.row])
         cell.selectionStyle = .none
-
         return cell
     }
 
