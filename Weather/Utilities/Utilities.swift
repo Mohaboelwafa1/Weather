@@ -7,6 +7,8 @@
 //
 import Foundation
 import SystemConfiguration
+import UIKit
+import Toast_Swift
 
 class Utilities
 {
@@ -57,5 +59,44 @@ class Utilities
         let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
         return "\(components.day!)/\(components.month!)"
     }
+
+    func ShowIndicator(title: String, message: String, controller: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating();
+        alert.view.addSubview(loadingIndicator)
+        controller.present(alert, animated: true, completion: nil)
+    }
+
+    func showConnectionError(view: UIViewController, title: String, duration: Double, message: String, image: String) ->Bool {
+        var returnResult = false
+        view.view!.makeToast(
+        message,
+        duration: duration,
+        point: CGPoint(x: view.view.frame.size.width/2, y: view.view.frame.size.height/2),
+        title: title,
+        image: UIImage(named: "\(image)")) { didTap in
+            if didTap {
+                returnResult =  true
+            } else {
+                returnResult = false
+            }
+        }
+
+        return returnResult
+    }
+
+    func isItFirstLaunch() -> Bool {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            return false
+        } else {
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            return true
+        }
+    }
+
 
 }

@@ -16,6 +16,7 @@ target 'Weather' do
   # pod 'Sentry', '~> 4.4.1'
   # pod 'netfox'
   # pod 'R.swift'
+  pod 'Toast-Swift', '~> 5.0.1'
 
 
   target 'WeatherTests' do

@@ -45,8 +45,8 @@ class SplashViewModel_Model: NSObject, SplashViewModel_View {
                 }
             }
 
-            let unRepeatedCitiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
-            completionHandler(unRepeatedCitiesList, statusCode, errorModel)
+            let citiesList = realm.objects(CitiesDBModel.self)
+            completionHandler(citiesList, statusCode, errorModel)
         })
     }
 

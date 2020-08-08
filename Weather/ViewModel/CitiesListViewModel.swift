@@ -32,7 +32,9 @@ class CitiesListViewModel_Model: NSObject, CitiesListViewModel_View {
             (result, statusCode, errorModel) in
 
             let realm = try! Realm()
-
+            try! realm.write {
+                realm.deleteAll()
+            }
             for city in result {
                 let cityModel = CitiesDBModel()
                 cityModel.date = city.date

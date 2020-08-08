@@ -11,6 +11,7 @@ PODS:
     - Realm (= 3.20.0)
   - SwiftLint (0.36.0)
   - SwiftyJSON (4.3.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - RealmSwift (~> 3.20.0)
   - SwiftLint (~> 0.36.0)
   - SwiftyJSON (~> 4.0)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - RealmSwift
     - SwiftLint
     - SwiftyJSON
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -38,7 +41,8 @@ SPEC CHECKSUMS:
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 0689f1fe2ebc85f2bffcb22f953614f32db68c16
+PODFILE CHECKSUM: 8d32b02e644f05413d7ebeb460b90908b40c615e
 
 COCOAPODS: 1.8.4
