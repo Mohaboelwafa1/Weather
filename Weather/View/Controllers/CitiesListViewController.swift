@@ -31,6 +31,18 @@ class CitiesListViewController: UIViewController {
 
     }
 
+    func ConvertTempreture(temp: Double , type: String) -> Double {
+        switch type {
+           case "C":
+               return temp
+           case "K":
+               return  Double(round(100*(temp - 273.15))/100)
+           case "F":
+               return  Double(round(100*((temp - 32) / 1.8))/100)
+           default:
+               return temp
+           }
+       }
 }
 extension CitiesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +54,7 @@ extension CitiesListViewController : UITableViewDataSource {
         var model : CityCellModel = CityCellModel()
         model.cityName = self.distinictCitiesList?[indexPath.row].cityName ?? "Loading ..."
         model.currentTime = self.distinictCitiesList?[indexPath.row].date ?? "Loading ..."
-        model.tempreture = "\(self.distinictCitiesList?[indexPath.row].temp ?? 0)"
+        model.tempreture = "\(self.ConvertTempreture(temp: self.distinictCitiesList?[indexPath.row].temp ?? 0, type: self.distinictCitiesList?[indexPath.row].tempType ?? "C"))"
         model.backGroundImage = self.distinictCitiesList?[indexPath.row].cityPicture ?? ""
         (cell as! CustomCityCell).setModel(model: model)
         return cell

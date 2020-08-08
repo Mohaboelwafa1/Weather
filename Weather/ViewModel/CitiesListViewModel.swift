@@ -21,6 +21,18 @@ protocol CitiesListViewModel_View {
 
 }
 
+enum TempType: String{
+    case Celsius = "C"
+    case Kelvin = "K"
+    case Fahrenheit = "F"
+}
+
+enum ASCIIControlCharacter: Character {
+    case tab = "\t"
+    case lineFeed = "\n"
+    case carriageReturn = "\r"
+}
+
 
 class CitiesListViewModel_Model: NSObject, CitiesListViewModel_View {
 
@@ -49,10 +61,9 @@ class CitiesListViewModel_Model: NSObject, CitiesListViewModel_View {
                 }
             }
 
-
             let unRepeatedCitiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"])
-
             completionHandler(unRepeatedCitiesList, statusCode, errorModel)
         })
     }
+
 }
