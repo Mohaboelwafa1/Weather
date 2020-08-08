@@ -10,6 +10,9 @@
 		21703D043344110517BF5E4E /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC891B9BC9CFF80C3EF5976 /* Pods_Weather.framework */; };
 		4C01993424DEACD900191E4C /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993324DEACD900191E4C /* CityDetailsViewController.swift */; };
 		4C01993624DEAE9200191E4C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993524DEAE9200191E4C /* SplashViewController.swift */; };
+		4C01993924DEBE1900191E4C /* CustomTempDegreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993824DEBE1900191E4C /* CustomTempDegreeCell.swift */; };
+		4C01993B24DEBE6200191E4C /* CustomTempDegreeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */; };
+		4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */; };
 		4C375E6E24DE11F400651495 /* CitiesDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C375E6D24DE11F400651495 /* CitiesDBModel.swift */; };
 		4CF92C2C24DC90BF0095C45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */; };
 		4CF92C2E24DC90BF0095C45A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */; };
@@ -55,6 +58,9 @@
 		2CC891B9BC9CFF80C3EF5976 /* Pods_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C01993324DEACD900191E4C /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
 		4C01993524DEAE9200191E4C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		4C01993824DEBE1900191E4C /* CustomTempDegreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTempDegreeCell.swift; sourceTree = "<group>"; };
+		4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTempDegreeCellModel.swift; sourceTree = "<group>"; };
+		4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTempDegreeCell.xib; sourceTree = "<group>"; };
 		4C375E6D24DE11F400651495 /* CitiesDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesDBModel.swift; sourceTree = "<group>"; };
 		4CF92C2824DC90BF0095C45A /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +138,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4C01993724DEBDE100191E4C /* CustomTempDegreeCell */ = {
+			isa = PBXGroup;
+			children = (
+				4C01993824DEBE1900191E4C /* CustomTempDegreeCell.swift */,
+				4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */,
+				4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */,
+			);
+			path = CustomTempDegreeCell;
+			sourceTree = "<group>";
+		};
 		4CF92C1F24DC90BF0095C45A = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +219,7 @@
 		4CF92C5F24DCB1010095C45A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C01993724DEBDE100191E4C /* CustomTempDegreeCell */,
 				4CF92C6924DCBBEC0095C45A /* CityCell */,
 				4CF92C6524DCB3530095C45A /* Controllers */,
 				4CF92C3124DC90BF0095C45A /* Main.storyboard */,
@@ -379,6 +396,7 @@
 				4CF92C3824DC90C20095C45A /* Assets.xcassets in Resources */,
 				4CF92C3324DC90BF0095C45A /* Main.storyboard in Resources */,
 				4CF92C6D24DCBC360095C45A /* CustomCityCell.xib in Resources */,
+				4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +525,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C375E6E24DE11F400651495 /* CitiesDBModel.swift in Sources */,
+				4C01993B24DEBE6200191E4C /* CustomTempDegreeCellModel.swift in Sources */,
 				4CF92C7B24DCCEE90095C45A /* Utilities.swift in Sources */,
+				4C01993924DEBE1900191E4C /* CustomTempDegreeCell.swift in Sources */,
 				4CF92C6F24DCBFF10095C45A /* CityCellModel.swift in Sources */,
 				4CF92C7124DCC96F0095C45A /* CitiesListViewModel.swift in Sources */,
 				4CF92C7524DCCBD80095C45A /* Error_Response_Model.swift in Sources */,

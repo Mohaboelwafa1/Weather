@@ -75,17 +75,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-XB-wVg">
-                                <rect key="frame" x="186" y="438" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amsterdam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-XB-wVg">
+                                <rect key="frame" x="20" y="94" width="374" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Oth-0U-fsA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UnC-cZ-8aZ">
+                                <rect key="frame" x="20" y="179" width="374" height="683"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wMC-ee-ujg" id="WCd-G9-HlB"/>
+                                    <outlet property="delegate" destination="wMC-ee-ujg" id="foI-6V-rji"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iCo-XB-wVg" firstAttribute="leading" secondItem="Ftw-10-Fit" secondAttribute="leading" constant="20" id="69j-pM-hZH"/>
+                            <constraint firstItem="Ftw-10-Fit" firstAttribute="trailing" secondItem="UnC-cZ-8aZ" secondAttribute="trailing" constant="20" id="DiI-53-btB"/>
+                            <constraint firstItem="UnC-cZ-8aZ" firstAttribute="top" secondItem="iCo-XB-wVg" secondAttribute="bottom" constant="60" id="HC8-1z-RoF"/>
+                            <constraint firstItem="UnC-cZ-8aZ" firstAttribute="bottom" secondItem="Ftw-10-Fit" secondAttribute="bottom" id="aAh-TO-yYk"/>
+                            <constraint firstItem="UnC-cZ-8aZ" firstAttribute="leading" secondItem="Ftw-10-Fit" secondAttribute="leading" constant="20" id="aPI-RA-5YF"/>
+                            <constraint firstItem="iCo-XB-wVg" firstAttribute="top" secondItem="Ftw-10-Fit" secondAttribute="top" constant="50" id="amz-WS-fwh"/>
+                            <constraint firstItem="Ftw-10-Fit" firstAttribute="trailing" secondItem="iCo-XB-wVg" secondAttribute="trailing" constant="20" id="bdR-i3-xxC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ftw-10-Fit"/>
                     </view>
+                    <connections>
+                        <outlet property="listOfCityDegrees" destination="UnC-cZ-8aZ" id="Fsk-a6-dfC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vrl-RW-sw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
