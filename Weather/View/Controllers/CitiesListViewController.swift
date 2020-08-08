@@ -96,6 +96,7 @@ extension CitiesListViewController : UITableViewDelegate {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let cityDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "CityDetailsViewController") as! CityDetailsViewController
         cityDetailsViewController.cityName = self.citiesList?[indexPath.row].cityName
+        print(self.citiesList?[indexPath.row].cityName)
         self.navigationController?.pushViewController(cityDetailsViewController, animated: true)
     }
 }

@@ -81,16 +81,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amsterdam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-XB-wVg">
-                                <rect key="frame" x="20" y="94" width="374" height="25"/>
+                                <rect key="frame" x="20" y="94" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Oth-0U-fsA"/>
+                                    <constraint firstAttribute="height" constant="50" id="Oth-0U-fsA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UnC-cZ-8aZ">
-                                <rect key="frame" x="20" y="179" width="374" height="683"/>
+                                <rect key="frame" x="20" y="204" width="374" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="wMC-ee-ujg" id="WCd-G9-HlB"/>
@@ -111,6 +111,7 @@
                         <viewLayoutGuide key="safeArea" id="Ftw-10-Fit"/>
                     </view>
                     <connections>
+                        <outlet property="cityNameLabel" destination="iCo-XB-wVg" id="FMQ-YJ-CaZ"/>
                         <outlet property="listOfCityDegrees" destination="UnC-cZ-8aZ" id="Fsk-a6-dfC"/>
                     </connections>
                 </viewController>

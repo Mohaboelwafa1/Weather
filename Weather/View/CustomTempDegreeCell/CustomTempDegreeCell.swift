@@ -30,6 +30,6 @@ class CustomTempDegreeCell : UITableViewCell {
         self.timeLabel.text = String(describing: model.currentTime)
         self.degreeLabel.text = String(describing: model.tempreture)
         self.timeLabel.text = String(describing: model.currentTime)
-        self.iconImage.image = UIImage(named: "test")
+        self.iconImage.image = UIImage(named: "\(model.iconImage)")
     }
 }
