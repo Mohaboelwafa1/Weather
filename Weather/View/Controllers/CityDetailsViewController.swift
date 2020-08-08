@@ -8,11 +8,16 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class CityDetailsViewController: UIViewController {
 
+    var cityName: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        let unRepeatedCitiesList = realm.objects(CitiesDBModel.self).filter("cityName = '\(cityName!)'").sorted(byKeyPath: "date", ascending: true)
     }
 
 }

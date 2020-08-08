@@ -35,7 +35,7 @@ class CitiesListViewController: UIViewController {
     }
 
     func setUTableView() {
-        self.navigationItem.setHidesBackButton(true, animated: true);
+        self.navigationItem.setHidesBackButton(true, animated: true)
         listOfCitiesTable.delegate = self
         listOfCitiesTable.register(CustomCityCell.self, forCellReuseIdentifier: "CustomCityCell")
         listOfCitiesTable.register(UINib(nibName: "CustomCityCell",bundle: nil), forCellReuseIdentifier: "CustomCityCell")
@@ -83,6 +83,7 @@ extension CitiesListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let cityDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "CityDetailsViewController") as! CityDetailsViewController
+        cityDetailsViewController.cityName = self.distinictCitiesList?[indexPath.row].cityName
         self.navigationController?.pushViewController(cityDetailsViewController, animated: true)
     }
 }
