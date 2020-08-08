@@ -15,6 +15,7 @@ class CityDetailsViewController: UIViewController {
     var cityName: String?
     @IBOutlet weak var listOfCityDegrees : UITableView!
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var backGroundImage: UIImageView!
     var degreesList : Results<CitiesDBModel>?
 
     override func viewDidLoad() {
@@ -23,10 +24,17 @@ class CityDetailsViewController: UIViewController {
         getCityData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listOfCityDegrees.backgroundColor = .clear
+        self.listOfCityDegrees.isOpaque = false;
+    }
+
     func setupView() {
         cityNameLabel.text = cityName!
         listOfCityDegrees.register(CustomTempDegreeCell.self, forCellReuseIdentifier: "CustomTempDegreeCell")
         self.listOfCityDegrees.register(UINib(nibName: "CustomTempDegreeCell",bundle: nil), forCellReuseIdentifier: "CustomTempDegreeCell")
+        self.backGroundImage.image = UIImage(named: "NightBG")
     }
 
     func getCityData(){
@@ -49,12 +57,18 @@ extension CityDetailsViewController : UITableViewDataSource {
         model.tempreture = "\(self.degreesList?[indexPath.row].temp ?? 0)"
         model.iconImage = "CloudyIcon"
         (cell as! CustomTempDegreeCell).setModel(model: model)
+        cell.selectionStyle = .none
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+}
 
+extension CityDetailsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
 }
 
