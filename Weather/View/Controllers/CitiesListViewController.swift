@@ -24,14 +24,9 @@ class CitiesListViewController: UIViewController {
     }
 
     func fetchWeatherData() {
-        DispatchQueue.global(qos: .background).async {
-            self.citiesListViewModel.getCitiesList(completionHandler: {
-                (result, statusCode, errorModel)in
-                self.distinictCitiesList = result
-                self.listOfCitiesTable.reloadData()
-                self.refreshControl.endRefreshing()
-            })
-        }
+        let realm = try! Realm()
+        distinictCitiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
+        self.refreshControl.endRefreshing()
     }
 
     func setUTableView() {

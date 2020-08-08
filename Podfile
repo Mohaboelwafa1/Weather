@@ -16,7 +16,7 @@ target 'Weather' do
   # pod 'Sentry', '~> 4.4.1'
   # pod 'netfox'
   # pod 'R.swift'
-  pod 'MBProgressHUD', '~> 1.2.0'
+
 
   target 'WeatherTests' do
     inherit! :search_paths

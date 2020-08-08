@@ -29,6 +29,9 @@
                         <viewLayoutGuide key="safeArea" id="qOv-Qx-rat"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ava-iO-quV"/>
+                    <connections>
+                        <outlet property="launchScreenBGImage" destination="xKe-PM-pAK" id="zOt-ef-FTM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZv-Bx-GhZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
