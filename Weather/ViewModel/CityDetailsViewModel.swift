@@ -50,13 +50,13 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
     func getImageName(degree: Double) -> String {
         switch degree {
         case let degree where degree <= 22.5:
-            return "SnowingIcon"
+            return R.image.snowingIcon()!.accessibilityIdentifier!
         case let degree where degree <= 25.0 && degree > 22.5:
-            return "CloudyIcon"
+            return R.image.cloudyIcon()!.accessibilityIdentifier!
         case let degree where degree <= 27.5 && degree > 25.0:
-            return "RainyIcon"
+            return R.image.rainyIcon()!.accessibilityIdentifier!
         case let degree where degree > 27.5:
-            return "SunnyIcon"
+            return R.image.sunnyIcon()!.accessibilityIdentifier!
         default:
             return"unkown"
         }

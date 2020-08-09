@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by Mohammed hassan on 8/10/20.
+  Copyright © 2020 Mohammed hassan. All rights reserved.
+*/
+
+"loading" = "bezig met laden";
+"january" = "januari";
+"february" = "februari";
+"march" = "maart";
+"april" = "april";
+"may" = "May";
+"june" = "juni";
+"july" = "juli";
+"august" = "augustus";
+"september" = "september";
+"october" = "oktober";
+"november" = "November";
+"december" = "december";
+"unkown" = "onbekend";
+"connection error" = "verbindingsfout";
+"make sure of connection" = "Zorg voor de verbinding";
+"please wait" = "wacht alsjeblieft";
+"retry connect" = "probeer opnieuw verbinding te maken";

@@ -39,7 +39,7 @@ class CitiesListViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
 
-        self.backGroundImage.image = UIImage(named: "NightBG")
+        self.backGroundImage.image = R.image.nightBG() //UIImage(named: "NightBG")
         self.backGroundImage.alpha = 0.05
     }
 
@@ -64,10 +64,10 @@ class CitiesListViewController: UIViewController {
             self.refreshControl.endRefreshing()
             Utilities.shared.showConnectionError(
                 view: self,
-                title: "Connection error",
+                title: R.string.localizable.connectionError(),
                 duration: 1.0,
-                message: "Make sure of connection",
-                image: "CloudyIcon.png"
+                message: R.string.localizable.makeSureOfConnection(),
+                image: R.image.cloudyIcon()
             )
         }
     }

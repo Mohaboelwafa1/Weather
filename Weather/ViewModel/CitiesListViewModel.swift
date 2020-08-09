@@ -45,7 +45,7 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
             let degree = row.temp
             let celsuisDegree = self.ConvertTempreture(temp: degree, type: (row.tempType)!)
 
-            model.cityName = row.cityName ?? "Loading ..."
+            model.cityName = row.cityName ?? R.string.localizable.loading()
             model.currentTime = self.getDate(date: dateAndTime)
             model.tempreture = "\(celsuisDegree) °"
             model.backGroundImage = row.cityPicture ?? ""

@@ -70,31 +70,31 @@ class BaseViewModel_Model: NSObject, BaseViewModel_View {
     func getMonthName(month:Int) -> String {
         switch month {
         case 1:
-            return "January"
+            return R.string.localizable.january()
         case 2:
-            return "February"
+            return R.string.localizable.february()
         case 3:
-            return "March"
+            return R.string.localizable.march()
         case 4:
-            return "April"
+            return R.string.localizable.april()
         case 5:
-            return "May"
+            return R.string.localizable.may()
         case 6:
-            return "June"
+            return R.string.localizable.june()
         case 7:
-            return "July"
+            return R.string.localizable.july()
         case 8:
-            return "August"
+            return R.string.localizable.august()
         case 9:
-            return "September"
+            return R.string.localizable.september()
         case 10:
-            return "October"
+            return R.string.localizable.october()
         case 11:
-            return "November"
+            return R.string.localizable.november()
         case 12:
-            return "December"
+            return R.string.localizable.december()
         default:
-            return "Unkown"
+            return R.string.localizable.unkown()
         }
     }
 

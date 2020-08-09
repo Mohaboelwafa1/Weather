@@ -40,7 +40,7 @@ class CustomCityCell : UITableViewCell {
         imageview.kf.indicatorType = .activity
         imageview.kf.setImage(
             with: url,
-            placeholder: UIImage(named: "cityPlaceHolder"),
+            placeholder: R.image.cityPlaceHolder(),
             options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),

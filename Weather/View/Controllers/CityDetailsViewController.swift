@@ -33,7 +33,7 @@ class CityDetailsViewController: UIViewController {
         cityNameLabel.text = cityName!
         listOfCityDegrees.register(CustomTempDegreeCell.self, forCellReuseIdentifier: "CustomTempDegreeCell")
         self.listOfCityDegrees.register(UINib(nibName: "CustomTempDegreeCell",bundle: nil), forCellReuseIdentifier: "CustomTempDegreeCell")
-        self.backGroundImage.image = UIImage(named: "NightBG")
+        self.backGroundImage.image = R.image.nightBG()//UIImage(named: "NightBG")
     }
 
     func fetchData(){

@@ -15,6 +15,8 @@
 		4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */; };
 		4C01993F24DEDA2500191E4C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993E24DEDA2500191E4C /* SplashViewModel.swift */; };
 		4C375E6E24DE11F400651495 /* CitiesDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C375E6D24DE11F400651495 /* CitiesDBModel.swift */; };
+		4C91AAA624E0B2390009CED6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C91AAA824E0B2390009CED6 /* Localizable.strings */; };
+		4C91AAAC24E0BAAC0009CED6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AAAB24E0BAAB0009CED6 /* R.generated.swift */; };
 		4CE89C9124DF281200B0F192 /* CityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE89C9024DF281200B0F192 /* CityDetailsViewModel.swift */; };
 		4CE89C9324DF3F3F00B0F192 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE89C9224DF3F3F00B0F192 /* BaseViewModel.swift */; };
 		4CF92C2C24DC90BF0095C45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */; };
@@ -66,6 +68,11 @@
 		4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTempDegreeCell.xib; sourceTree = "<group>"; };
 		4C01993E24DEDA2500191E4C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		4C375E6D24DE11F400651495 /* CitiesDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesDBModel.swift; sourceTree = "<group>"; };
+		4C91AAA224E0B1CD0009CED6 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/Main.strings"; sourceTree = "<group>"; };
+		4C91AAA324E0B1CE0009CED6 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		4C91AAA724E0B2390009CED6 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4C91AAA924E0B23E0009CED6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C91AAAB24E0BAAB0009CED6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		4CE89C9024DF281200B0F192 /* CityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewModel.swift; sourceTree = "<group>"; };
 		4CE89C9224DF3F3F00B0F192 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4CF92C2824DC90BF0095C45A /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +164,7 @@
 		4CF92C1F24DC90BF0095C45A = {
 			isa = PBXGroup;
 			children = (
+				4C91AAAB24E0BAAB0009CED6 /* R.generated.swift */,
 				4CF92C2A24DC90BF0095C45A /* Weather */,
 				4CF92C4424DC90C20095C45A /* WeatherTests */,
 				4CF92C4F24DC90C20095C45A /* WeatherUITests */,
@@ -189,6 +197,7 @@
 				4CF92C3724DC90C20095C45A /* Assets.xcassets */,
 				4CF92C3924DC90C20095C45A /* LaunchScreen.storyboard */,
 				4CF92C3C24DC90C20095C45A /* Info.plist */,
+				4C91AAA824E0B2390009CED6 /* Localizable.strings */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -300,6 +309,7 @@
 			buildConfigurationList = 4CF92C5524DC90C20095C45A /* Build configuration list for PBXNativeTarget "Weather" */;
 			buildPhases = (
 				67A43B463914A58584138FAC /* [CP] Check Pods Manifest.lock */,
+				4C91AAAA24E0B9A60009CED6 /* ShellScript */,
 				4CF92C2424DC90BF0095C45A /* Sources */,
 				4CF92C2524DC90BF0095C45A /* Frameworks */,
 				4CF92C2624DC90BF0095C45A /* Resources */,
@@ -383,6 +393,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"nl-NL",
 			);
 			mainGroup = 4CF92C1F24DC90BF0095C45A;
 			productRefGroup = 4CF92C2924DC90BF0095C45A /* Products */;
@@ -402,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF92C3B24DC90C20095C45A /* LaunchScreen.storyboard in Resources */,
+				4C91AAA624E0B2390009CED6 /* Localizable.strings in Resources */,
 				4CF92C3824DC90C20095C45A /* Assets.xcassets in Resources */,
 				4CF92C3324DC90BF0095C45A /* Main.storyboard in Resources */,
 				4CF92C6D24DCBC360095C45A /* CustomCityCell.xib in Resources */,
@@ -426,6 +438,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C91AAAA24E0B9A60009CED6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		67A43B463914A58584138FAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,6 +573,7 @@
 				4CF92C7124DCC96F0095C45A /* CitiesListViewModel.swift in Sources */,
 				4CF92C7524DCCBD80095C45A /* Error_Response_Model.swift in Sources */,
 				4CF92C6724DCB3700095C45A /* CitiesListViewController.swift in Sources */,
+				4C91AAAC24E0BAAC0009CED6 /* R.generated.swift in Sources */,
 				4CF92C6B24DCBC010095C45A /* CustomCityCell.swift in Sources */,
 				4CF92C6424DCB1EF0095C45A /* City.swift in Sources */,
 				4CF92C7824DCCE890095C45A /* OperationalRepository.swift in Sources */,
@@ -589,10 +621,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4C91AAA824E0B2390009CED6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C91AAA724E0B2390009CED6 /* nl-NL */,
+				4C91AAA924E0B23E0009CED6 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		4CF92C3124DC90BF0095C45A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4CF92C3224DC90BF0095C45A /* Base */,
+				4C91AAA224E0B1CD0009CED6 /* nl-NL */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -601,6 +643,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4CF92C3A24DC90C20095C45A /* Base */,
+				4C91AAA324E0B1CE0009CED6 /* nl-NL */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -612,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -672,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

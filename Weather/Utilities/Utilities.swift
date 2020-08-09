@@ -46,13 +46,13 @@ class Utilities
         controller.present(alert, animated: true, completion: nil)
     }
 
-    func showConnectionError(view: UIViewController, title: String, duration: Double, message: String, image: String) {
+    func showConnectionError(view: UIViewController, title: String, duration: Double, message: String, image: UIImage?) {
         view.view!.makeToast(
             message,
             duration: duration,
             point: CGPoint(x: view.view.frame.size.width/2, y: view.view.frame.size.height/2),
             title: title,
-            image: UIImage(named: "\(image)")) { didTap in
+            image: image) { didTap in
                 if didTap {
                 } else {
                 }

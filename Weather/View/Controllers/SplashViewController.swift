@@ -24,7 +24,7 @@ class SplashViewController : UIViewController {
 
     func fetchWeatherData() {
         if Utilities.shared.isConnectedToNetwork() {
-            Utilities.shared.ShowIndicator(title: "", message: "Please wait ...", controller: self)
+            Utilities.shared.ShowIndicator(title: "", message:  R.string.localizable.pleaseWait(), controller: self)
             DispatchQueue.global(qos: .background).async {
                 self.splashViewModel.getCitiesList(completionHandler: {
                     (result, statusCode, errorModel)in
@@ -38,10 +38,10 @@ class SplashViewController : UIViewController {
             UserDefaults.standard.set(false, forKey: "launchedBefore")
             Utilities.shared.showConnectionError(
                 view: self,
-                title: "Connection error",
+                title: R.string.localizable.connectionError(),
                 duration: 2.0,
-                message: "Please make sure of connection. We are trying again",
-                image: "CloudyIcon.png"
+                message: R.string.localizable.retryConnect(),
+                image: R.image.cloudyIcon()
             )
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
