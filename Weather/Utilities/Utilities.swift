@@ -8,6 +8,7 @@
 import SystemConfiguration
 import UIKit
 import Toast_Swift
+import Alamofire
 
 class Utilities
 {

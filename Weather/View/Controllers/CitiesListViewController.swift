@@ -39,7 +39,7 @@ class CitiesListViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
 
-        self.backGroundImage.image = R.image.nightBG() //UIImage(named: "NightBG")
+        self.backGroundImage.image = R.image.nightBG()
         self.backGroundImage.alpha = 0.05
     }
 
