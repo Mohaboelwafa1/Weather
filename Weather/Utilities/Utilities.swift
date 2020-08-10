@@ -9,13 +9,12 @@ import SystemConfiguration
 import UIKit
 import Toast_Swift
 
-class Utilities
-{
+class Utilities {
+
     private init() {}
     static let shared = Utilities()
 
     func isConnectedToNetwork() -> Bool {
-
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
@@ -33,7 +32,6 @@ class Utilities
         let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
-
     }
 
     func ShowIndicator(title: String?, message: String, controller: UIViewController) {
@@ -68,5 +66,4 @@ class Utilities
             return true
         }
     }
-
 }

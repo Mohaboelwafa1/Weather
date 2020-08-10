@@ -10,15 +10,3 @@ struct BaseApi {
     // THE REAL SERVER
     static let mainPath = "https://us-central1-mobile-assignment-server.cloudfunctions.net"
 }
-
-enum EndPoint {
-    case citiesList
-    var path:String
-    {
-        switch self {
-        // GET
-        case .citiesList:
-            return "/weather"
-        }
-    }
-}

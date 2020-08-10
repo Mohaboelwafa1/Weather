@@ -79,8 +79,8 @@ class CitiesListViewController: UIViewController {
             )
         }
     }
-    
 }
+
 extension CitiesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cellsModel.count

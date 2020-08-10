@@ -5,10 +5,8 @@
 //  Created by Mohammed hassan on 8/8/20.
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
-import Foundation
 import RealmSwift
 
-// DB model for Trips
 class CitiesDBModel : Object {
     @objc dynamic var date: String?
     @objc dynamic var cityName: String?

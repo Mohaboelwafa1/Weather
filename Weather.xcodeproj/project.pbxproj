@@ -14,6 +14,7 @@
 		4C01993B24DEBE6200191E4C /* CustomTempDegreeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */; };
 		4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */; };
 		4C01993F24DEDA2500191E4C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993E24DEDA2500191E4C /* SplashViewModel.swift */; };
+		4C1F67D724E200E500AF3765 /* EndPointEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F67D624E200E500AF3765 /* EndPointEnumeration.swift */; };
 		4C2444FC24E1F4CB00BE78BB /* TempTypeEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */; };
 		4C375E6E24DE11F400651495 /* CitiesDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C375E6D24DE11F400651495 /* CitiesDBModel.swift */; };
 		4C91AAA624E0B2390009CED6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C91AAA824E0B2390009CED6 /* Localizable.strings */; };
@@ -68,6 +69,7 @@
 		4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTempDegreeCellModel.swift; sourceTree = "<group>"; };
 		4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTempDegreeCell.xib; sourceTree = "<group>"; };
 		4C01993E24DEDA2500191E4C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		4C1F67D624E200E500AF3765 /* EndPointEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointEnumeration.swift; sourceTree = "<group>"; };
 		4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTypeEnumeration.swift; sourceTree = "<group>"; };
 		4C375E6D24DE11F400651495 /* CitiesDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesDBModel.swift; sourceTree = "<group>"; };
 		4C91AAA224E0B1CD0009CED6 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -163,13 +165,61 @@
 			path = CustomTempDegreeCell;
 			sourceTree = "<group>";
 		};
-		4C2444FD24E1FB9900BE78BB /* CustomCells */ = {
+		4C1F67D824E2025200AF3765 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				4C01993724DEBDE100191E4C /* CustomTempDegreeCell */,
+				4CE89C9224DF3F3F00B0F192 /* BaseViewModel.swift */,
+				4CF92C7E24DCD2810095C45A /* BaseApi.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4C1F67D924E2026400AF3765 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */,
+				4C1F67D624E200E500AF3765 /* EndPointEnumeration.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		4C1F67DA24E202A400AF3765 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F67DB24E202AA00AF3765 /* SplashScreen */,
+				4C1F67DC24E202B500AF3765 /* CitiesListScreen */,
+				4C1F67DD24E202BF00AF3765 /* CityDetailsScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4C1F67DB24E202AA00AF3765 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4C01993524DEAE9200191E4C /* SplashViewController.swift */,
+				4C01993E24DEDA2500191E4C /* SplashViewModel.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		4C1F67DC24E202B500AF3765 /* CitiesListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4CF92C6624DCB3700095C45A /* CitiesListViewController.swift */,
+				4CF92C7024DCC96F0095C45A /* CitiesListViewModel.swift */,
 				4CF92C6924DCBBEC0095C45A /* CityCell */,
 			);
-			path = CustomCells;
+			path = CitiesListScreen;
+			sourceTree = "<group>";
+		};
+		4C1F67DD24E202BF00AF3765 /* CityDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4C01993324DEACD900191E4C /* CityDetailsViewController.swift */,
+				4CE89C9024DF281200B0F192 /* CityDetailsViewModel.swift */,
+				4C01993724DEBDE100191E4C /* CustomTempDegreeCell */,
+			);
+			path = CityDetailsScreen;
 			sourceTree = "<group>";
 		};
 		4CF92C1F24DC90BF0095C45A = {
@@ -198,11 +248,13 @@
 		4CF92C2A24DC90BF0095C45A /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				4C1F67DA24E202A400AF3765 /* Modules */,
+				4C1F67D924E2026400AF3765 /* Enums */,
+				4C1F67D824E2025200AF3765 /* Base */,
 				4CF92C7924DCCED40095C45A /* Utilities */,
 				4CF92C7624DCCE3F0095C45A /* NetWorkManager */,
-				4CF92C6024DCB1090095C45A /* ViewModel */,
 				4CF92C5F24DCB1010095C45A /* View */,
-				4CF92C5E24DCB0EA0095C45A /* Model */,
+				4CF92C5E24DCB0EA0095C45A /* Models */,
 				4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */,
 				4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */,
 				4CF92C3724DC90C20095C45A /* Assets.xcassets */,
@@ -231,7 +283,7 @@
 			path = WeatherUITests;
 			sourceTree = "<group>";
 		};
-		4CF92C5E24DCB0EA0095C45A /* Model */ = {
+		4CF92C5E24DCB0EA0095C45A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4CF92C6124DCB19F0095C45A /* CitiesResponseModel.swift */,
@@ -239,46 +291,23 @@
 				4CF92C7424DCCBD80095C45A /* Error_Response_Model.swift */,
 				4C375E6D24DE11F400651495 /* CitiesDBModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4CF92C5F24DCB1010095C45A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4C2444FD24E1FB9900BE78BB /* CustomCells */,
-				4CF92C6524DCB3530095C45A /* Controllers */,
 				4CF92C3124DC90BF0095C45A /* Main.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		4CF92C6024DCB1090095C45A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				4CF92C7024DCC96F0095C45A /* CitiesListViewModel.swift */,
-				4C01993E24DEDA2500191E4C /* SplashViewModel.swift */,
-				4CE89C9024DF281200B0F192 /* CityDetailsViewModel.swift */,
-				4CE89C9224DF3F3F00B0F192 /* BaseViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4CF92C6524DCB3530095C45A /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				4CF92C6624DCB3700095C45A /* CitiesListViewController.swift */,
-				4C01993324DEACD900191E4C /* CityDetailsViewController.swift */,
-				4C01993524DEAE9200191E4C /* SplashViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		4CF92C6924DCBBEC0095C45A /* CityCell */ = {
 			isa = PBXGroup;
 			children = (
 				4CF92C6A24DCBC010095C45A /* CustomCityCell.swift */,
-				4CF92C6C24DCBC360095C45A /* CustomCityCell.xib */,
 				4CF92C6E24DCBFF10095C45A /* CityCellModel.swift */,
+				4CF92C6C24DCBC360095C45A /* CustomCityCell.xib */,
 			);
 			path = CityCell;
 			sourceTree = "<group>";
@@ -288,7 +317,6 @@
 			children = (
 				4CF92C7724DCCE890095C45A /* OperationalRepository.swift */,
 				4CF92C7C24DCD2010095C45A /* APIManager.swift */,
-				4CF92C7E24DCD2810095C45A /* BaseApi.swift */,
 			);
 			path = NetWorkManager;
 			sourceTree = "<group>";
@@ -297,7 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				4CF92C7A24DCCEE90095C45A /* Utilities.swift */,
-				4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -595,6 +622,7 @@
 				4C01993424DEACD900191E4C /* CityDetailsViewController.swift in Sources */,
 				4CE89C9124DF281200B0F192 /* CityDetailsViewModel.swift in Sources */,
 				4CE89C9324DF3F3F00B0F192 /* BaseViewModel.swift in Sources */,
+				4C1F67D724E200E500AF3765 /* EndPointEnumeration.swift in Sources */,
 				4CF92C2E24DC90BF0095C45A /* SceneDelegate.swift in Sources */,
 				4CF92C6224DCB19F0095C45A /* CitiesResponseModel.swift in Sources */,
 				4C01993624DEAE9200191E4C /* SplashViewController.swift in Sources */,

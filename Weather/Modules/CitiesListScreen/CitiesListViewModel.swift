@@ -9,7 +9,6 @@
 import RealmSwift
 
 protocol CitiesListViewModel_View {
-
     var citiesResponseModel: [CitiesResponseModel] { get }
     var cellsModel : [CityCellModel] { get set }
     var citiesList : Results<CitiesDBModel>? { get set }
@@ -21,7 +20,6 @@ protocol CitiesListViewModel_View {
         _ statusCode : Int,
         _ error_Response_Model:Error_Response_Model
         ) -> Void)
-
 }
 
 class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
@@ -38,7 +36,9 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
     }
 
     func prepareCellModel() -> [CityCellModel] {
+
         guard self.citiesList != nil else {return cellsModel}
+
         for row in self.citiesList! {
             var model : CityCellModel = CityCellModel()
             let dateAndTime = (row.date)!
@@ -65,6 +65,7 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
             (result, statusCode, errorModel) in
 
             if result == nil {completionHandler(nil, statusCode, errorModel ?? Error_Response_Model())}
+
             let realm = try! Realm()
             try! realm.write {
                 realm.deleteAll()
@@ -87,5 +88,4 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
             completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
         })
     }
-
 }

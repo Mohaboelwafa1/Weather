@@ -29,6 +29,7 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
     func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel] {
         degreesList = getCityData(cityName: cityName)
         guard degreesList != nil else {return cellsModel}
+
         for row in degreesList!{
             var model : CustomTempDegreeCellModel = CustomTempDegreeCellModel()
             let dateAndTime = (row.date)!
@@ -59,7 +60,7 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
         case let temp where temp > 27.5:
             return R.image.sunnyIcon()!.accessibilityIdentifier!
         default:
-            return"unkown"
+            return "unkown"
         }
     }
 }

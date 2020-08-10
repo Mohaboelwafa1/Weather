@@ -9,7 +9,6 @@
 import RealmSwift
 
 protocol SplashViewModel_View {
-
     var citiesResponseModel: [CitiesResponseModel] { get }
     func getCitiesList(completionHandler: @escaping (
         _ ResponseModel:Results<CitiesDBModel>?,
@@ -32,6 +31,7 @@ class SplashViewModel_Model: NSObject, SplashViewModel_View {
             (result, statusCode, errorModel) in
             
             if result == nil {completionHandler(nil, statusCode, errorModel ?? Error_Response_Model())}
+
             let realm = try! Realm()
 
             for city in result! {
