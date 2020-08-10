@@ -13,20 +13,22 @@ class CityDetailsViewController: UIViewController {
     @IBOutlet weak var listOfCityDegrees : UITableView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var backGroundImage: UIImageView!
+    
     var cityName: String?
     var cityDetailsViewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
     var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-        fetchData()
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         listOfCityDegrees.backgroundColor = .clear
         self.listOfCityDegrees.isOpaque = false;
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        fetchData()
+        addBackGesture()
     }
 
     func setupView() {
@@ -39,6 +41,16 @@ class CityDetailsViewController: UIViewController {
     func fetchData(){
         guard cityName != nil else {return}
         cellsModel = cityDetailsViewModel.prepareCellModel(cityName: cityName!)
+    }
+
+    func addBackGesture() {
+        let backMoveRecognizer = UISwipeGestureRecognizer(target: self, action:#selector(swipeMade(_:)))
+        backMoveRecognizer.direction = .right
+        self.view.addGestureRecognizer(backMoveRecognizer)
+    }
+
+    @IBAction func swipeMade(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popViewController(animated: true)
     }
 }
 

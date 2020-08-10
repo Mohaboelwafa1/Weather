@@ -112,6 +112,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="DTG-BS-CMC" firstAttribute="leading" secondItem="Ftw-10-Fit" secondAttribute="leading" id="0LY-JY-C7r"/>
                             <constraint firstItem="iCo-XB-wVg" firstAttribute="leading" secondItem="Ftw-10-Fit" secondAttribute="leading" constant="20" id="69j-pM-hZH"/>
