@@ -10,20 +10,20 @@ struct CityCellModel : Codable {
 
     var currentTime : String
     var cityName : String
-    var tempreture : String
+    var temp : String
     var backGroundImage: String
 
     enum CodingKeys: String, CodingKey {
         case currentTime = "currentTime"
         case cityName = "cityName"
-        case tempreture = "tempreture"
+        case temp = "temp"
         case backGroundImage = "backGroundImage"
     }
 
     init() {
         currentTime = ""
         cityName = ""
-        tempreture = ""
+        temp = ""
         backGroundImage = ""
     }
 
@@ -31,7 +31,7 @@ struct CityCellModel : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         currentTime = try values.decodeIfPresent(String.self, forKey: .currentTime)!
         cityName = try values.decodeIfPresent(String.self, forKey: .cityName)!
-        tempreture = try values.decodeIfPresent(String.self, forKey: .tempreture)!
+        temp = try values.decodeIfPresent(String.self, forKey: .temp)!
         backGroundImage = try values.decodeIfPresent(String.self, forKey: .backGroundImage)!
     }
 }

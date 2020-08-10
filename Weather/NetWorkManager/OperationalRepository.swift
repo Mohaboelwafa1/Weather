@@ -20,7 +20,7 @@ extension OperationalRepository {
                 switch response.result {
                 case .success(_):
                     if response.data != nil {
-                        completionHandler(response.data as AnyObject, (response.response?.statusCode)! , response.data as AnyObject)
+                        completionHandler(response.data as AnyObject, response.response?.statusCode ?? 404 , response.data as AnyObject)
                     }
                 case .failure(_): break
                 }

@@ -30,13 +30,14 @@ class CityDetailsViewController: UIViewController {
     }
 
     func setupView() {
-        cityNameLabel.text = cityName!
+        if cityName != nil {cityNameLabel.text = cityName!}
         listOfCityDegrees.register(CustomTempDegreeCell.self, forCellReuseIdentifier: "CustomTempDegreeCell")
         self.listOfCityDegrees.register(UINib(nibName: "CustomTempDegreeCell",bundle: nil), forCellReuseIdentifier: "CustomTempDegreeCell")
-        self.backGroundImage.image = R.image.nightBG()//UIImage(named: "NightBG")
+        self.backGroundImage.image = R.image.nightBG()
     }
 
     func fetchData(){
+        guard cityName != nil else {return}
         cellsModel = cityDetailsViewModel.prepareCellModel(cityName: cityName!)
     }
 }

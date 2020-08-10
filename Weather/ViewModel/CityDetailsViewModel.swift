@@ -11,7 +11,7 @@ import RealmSwift
 protocol CityDetailsViewModel_View {
     func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel]
     func getCityData(cityName: String) -> Results<CitiesDBModel>?
-    func getImageName(degree: Double) -> String
+    func getImageName(temp: Double) -> String
     var cellsModel : [CustomTempDegreeCellModel] { get set }
     var degreesList : Results<CitiesDBModel>? { get set }
 }
@@ -28,15 +28,16 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
 
     func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel] {
         degreesList = getCityData(cityName: cityName)
+        guard degreesList != nil else {return cellsModel}
         for row in degreesList!{
             var model : CustomTempDegreeCellModel = CustomTempDegreeCellModel()
             let dateAndTime = (row.date)!
-            let degree = row.temp
-            let celsuisDegree = self.ConvertTempreture(temp: degree, type: (row.tempType)!)
+            let temp = row.temp
+            let celsuisDegree = self.ConvertTempreture(temp: temp, type: self.getTempType(tempType: (row.tempType)!))
             model.currentTime = self.getTime(date: dateAndTime)
             model.todayDate = self.getDate(date: dateAndTime)
-            model.tempreture = "\(celsuisDegree) °"
-            model.iconImage = self.getImageName(degree: celsuisDegree)
+            model.temp = "\(celsuisDegree) °"
+            model.iconImage = self.getImageName(temp: celsuisDegree)
             cellsModel.append(model)
         }
         return cellsModel
@@ -47,15 +48,15 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
         return degreesList
     }
 
-    func getImageName(degree: Double) -> String {
-        switch degree {
-        case let degree where degree <= 22.5:
+    func getImageName(temp: Double) -> String {
+        switch temp {
+        case let temp where temp <= 22.5:
             return R.image.snowingIcon()!.accessibilityIdentifier!
-        case let degree where degree <= 25.0 && degree > 22.5:
+        case let temp where temp <= 25.0 && temp > 22.5:
             return R.image.cloudyIcon()!.accessibilityIdentifier!
-        case let degree where degree <= 27.5 && degree > 25.0:
+        case let temp where temp <= 27.5 && temp > 25.0:
             return R.image.rainyIcon()!.accessibilityIdentifier!
-        case let degree where degree > 27.5:
+        case let temp where temp > 27.5:
             return R.image.sunnyIcon()!.accessibilityIdentifier!
         default:
             return"unkown"

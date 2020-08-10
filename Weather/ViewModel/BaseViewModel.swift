@@ -12,7 +12,7 @@ import RealmSwift
 protocol BaseViewModel_View {
     func getDate(date: String?) -> String
     func getTime(date: String?) -> String
-    func ConvertTempreture(temp: Double , type: String) -> Double
+    func ConvertTempreture(temp: Double , type: TempTypeEnumeration) -> Double
     func getMonthName(month:Int) -> String
 }
 
@@ -22,19 +22,32 @@ class BaseViewModel_Model: NSObject, BaseViewModel_View {
         super.init()
     }
 
-    func ConvertTempreture(temp: Double, type: String) -> Double {
+    func ConvertTempreture(temp: Double, type: TempTypeEnumeration) -> Double {
         switch type {
-        case "C":
+        case .CELSIUS:
             return temp
-        case "K":
+        case .KELVIN:
             return  Double(round(100*(temp - 273.15))/100)
-        case "F":
+        case .FAHRENHEIT:
             return  Double(round(100*((temp - 32) / 1.8))/100)
-        default:
+        case .Unknown:
             return temp
         }
     }
 
+    func getTempType(tempType: String) -> TempTypeEnumeration {
+        switch tempType {
+        case "C":
+            return .CELSIUS
+        case "K":
+            return .KELVIN
+        case "F":
+            return .FAHRENHEIT
+        default:
+            return .Unknown
+
+        }
+    }
     func getDate(date: String?) -> String {
         let isoDate = date!
         let dateFormatter = ISO8601DateFormatter()

@@ -15,12 +15,12 @@ struct Error_Response_Model : Codable {
     enum CodingKeys: String, CodingKey {
 
         case code = "code"
-        case message = "message"
+        case message = "Error happend , Please try again"
     }
 
     init(){
         code = "code"
-        message = "Message"
+        message = "Error happend , Please try again"
     }
 
     init(from decoder: Decoder) throws {

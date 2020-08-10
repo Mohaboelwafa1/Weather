@@ -8,7 +8,6 @@
 import SystemConfiguration
 import UIKit
 import Toast_Swift
-import Alamofire
 
 class Utilities
 {
@@ -37,7 +36,7 @@ class Utilities
 
     }
 
-    func ShowIndicator(title: String, message: String, controller: UIViewController) {
+    func ShowIndicator(title: String?, message: String, controller: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true

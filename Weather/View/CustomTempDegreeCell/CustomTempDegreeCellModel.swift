@@ -10,20 +10,20 @@ struct CustomTempDegreeCellModel : Codable {
 
     var todayDate : String
     var currentTime : String
-    var tempreture : String
+    var temp : String
     var iconImage: String
 
     enum CodingKeys: String, CodingKey {
         case todayDate = "todayDate"
         case currentTime = "currentTime"
-        case tempreture = "tempreture"
+        case temp = "temp"
         case iconImage = "iconImage"
     }
 
     init() {
         todayDate = ""
         currentTime = ""
-        tempreture = ""
+        temp = ""
         iconImage = ""
     }
 
@@ -31,7 +31,7 @@ struct CustomTempDegreeCellModel : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         todayDate = try values.decodeIfPresent(String.self, forKey: .todayDate)!
         currentTime = try values.decodeIfPresent(String.self, forKey: .currentTime)!
-        tempreture = try values.decodeIfPresent(String.self, forKey: .tempreture)!
+        temp = try values.decodeIfPresent(String.self, forKey: .temp)!
         iconImage = try values.decodeIfPresent(String.self, forKey: .iconImage)!
     }
 }

@@ -38,16 +38,16 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
     }
 
     func prepareCellModel() -> [CityCellModel] {
-
+        guard self.citiesList != nil else {return cellsModel}
         for row in self.citiesList! {
             var model : CityCellModel = CityCellModel()
             let dateAndTime = (row.date)!
-            let degree = row.temp
-            let celsuisDegree = self.ConvertTempreture(temp: degree, type: (row.tempType)!)
+            let temp = row.temp
+            let celsuistemp = self.ConvertTempreture(temp: temp, type: self.getTempType(tempType: (row.tempType)!))
 
             model.cityName = row.cityName ?? R.string.localizable.loading()
             model.currentTime = self.getDate(date: dateAndTime)
-            model.tempreture = "\(celsuisDegree) °"
+            model.temp = "\(celsuistemp) °"
             model.backGroundImage = row.cityPicture ?? ""
             cellsModel.append(model)
         }
@@ -64,25 +64,27 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
         APIManager().GetCitiesList(completionHandler: {
             (result, statusCode, errorModel) in
 
+            if result == nil {completionHandler(nil, statusCode, errorModel ?? Error_Response_Model())}
             let realm = try! Realm()
             try! realm.write {
                 realm.deleteAll()
             }
-            for city in result {
-                let cityModel = CitiesDBModel()
-                cityModel.date = city.date
-                cityModel.cityName = city.city?.name
-                cityModel.cityPicture = city.city?.picture
-                cityModel.tempType = city.tempType
-                cityModel.temp = city.temp ?? 0
-                try! realm.write {
-                    realm.add(cityModel)
+
+                for city in result! {
+                    let cityModel = CitiesDBModel()
+                    cityModel.date = city.date
+                    cityModel.cityName = city.city?.name
+                    cityModel.cityPicture = city.city?.picture
+                    cityModel.tempType = city.tempType
+                    cityModel.temp = city.temp ?? 0
+                    try! realm.write {
+                        realm.add(cityModel)
+                    }
                 }
-            }
 
             let citiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
             self.cellsModel = self.prepareCellModel()
-            completionHandler(citiesList, statusCode, errorModel)
+            completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
         })
     }
 

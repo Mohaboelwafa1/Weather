@@ -21,6 +21,7 @@ protocol SplashViewModel_View {
 class SplashViewModel_Model: NSObject, SplashViewModel_View {
 
     var citiesResponseModel: [CitiesResponseModel]
+
     override init() {
         citiesResponseModel = [CitiesResponseModel]()
         super.init()
@@ -29,10 +30,11 @@ class SplashViewModel_Model: NSObject, SplashViewModel_View {
     func getCitiesList(completionHandler: @escaping (Results<CitiesDBModel>?, Int, Error_Response_Model) -> Void) {
         APIManager().GetCitiesList(completionHandler: {
             (result, statusCode, errorModel) in
-
+            
+            if result == nil {completionHandler(nil, statusCode, errorModel ?? Error_Response_Model())}
             let realm = try! Realm()
 
-            for city in result {
+            for city in result! {
                 let cityModel = CitiesDBModel()
                 cityModel.date = city.date
                 cityModel.cityName = city.city?.name
@@ -45,8 +47,7 @@ class SplashViewModel_Model: NSObject, SplashViewModel_View {
             }
 
             let citiesList = realm.objects(CitiesDBModel.self)
-            completionHandler(citiesList, statusCode, errorModel)
+            completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
         })
     }
-
 }

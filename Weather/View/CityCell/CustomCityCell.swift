@@ -13,7 +13,7 @@ class CustomCityCell : UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
-    @IBOutlet weak var tempretureLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -26,7 +26,7 @@ class CustomCityCell : UITableViewCell {
     func setModel(model : CityCellModel)   {
         self.timeLabel.text = String(describing: model.currentTime)
         self.cityNameLabel.text = String(describing: model.cityName)
-        self.tempretureLabel.text = String(describing: model.tempreture)
+        self.temperatureLabel.text = String(describing: model.temp)
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         self.downloadImageForCity(url: model.backGroundImage, imageview: imageView)
         imageView.alpha = 0.9

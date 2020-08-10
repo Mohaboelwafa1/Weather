@@ -55,7 +55,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cityNameLabel" destination="eza-YX-8Oz" id="fMj-iJ-IAH"/>
-                <outlet property="tempretureLabel" destination="EWS-ah-JhK" id="UT8-S5-xF2"/>
+                <outlet property="temperatureLabel" destination="EWS-ah-JhK" id="bnS-9D-GTv"/>
                 <outlet property="timeLabel" destination="tej-eQ-DFi" id="lXf-fV-7SI"/>
             </connections>
             <point key="canvasLocation" x="-215.94202898550725" y="82.366071428571431"/>

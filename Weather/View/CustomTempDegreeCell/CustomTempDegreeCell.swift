@@ -12,7 +12,7 @@ class CustomTempDegreeCell : UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var degreeLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,7 +26,7 @@ class CustomTempDegreeCell : UITableViewCell {
     func setModel(model : CustomTempDegreeCellModel) {
         self.dateLabel.text = String(describing: model.todayDate)
         self.timeLabel.text = String(describing: model.currentTime)
-        self.degreeLabel.text = String(describing: model.tempreture)
+        self.temperatureLabel.text = String(describing: model.temp)
         self.timeLabel.text = String(describing: model.currentTime)
         self.iconImage.image = UIImage(named: "\(model.iconImage)")
     }

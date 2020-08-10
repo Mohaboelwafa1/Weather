@@ -24,7 +24,7 @@ class SplashViewController : UIViewController {
 
     func fetchWeatherData() {
         if Utilities.shared.isConnectedToNetwork() {
-            Utilities.shared.ShowIndicator(title: "", message:  R.string.localizable.pleaseWait(), controller: self)
+            Utilities.shared.ShowIndicator(title: nil, message:  R.string.localizable.pleaseWait(), controller: self)
             DispatchQueue.global(qos: .background).async {
                 self.splashViewModel.getCitiesList(completionHandler: {
                     (result, statusCode, errorModel)in

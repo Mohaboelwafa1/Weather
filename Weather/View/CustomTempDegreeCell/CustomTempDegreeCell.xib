@@ -54,8 +54,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="m5J-Ik-hML" id="1bl-Z2-ZyO"/>
-                <outlet property="degreeLabel" destination="N0G-gq-F2A" id="iCu-eV-riQ"/>
                 <outlet property="iconImage" destination="4ac-kA-9Pm" id="Ef6-sH-4Yp"/>
+                <outlet property="temperatureLabel" destination="N0G-gq-F2A" id="e1m-Fp-wyN"/>
                 <outlet property="timeLabel" destination="FlZ-XK-I2X" id="bxD-UW-nUP"/>
             </connections>
             <point key="canvasLocation" x="100.00000000000001" y="46.205357142857139"/>

@@ -14,6 +14,7 @@
 		4C01993B24DEBE6200191E4C /* CustomTempDegreeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */; };
 		4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */; };
 		4C01993F24DEDA2500191E4C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993E24DEDA2500191E4C /* SplashViewModel.swift */; };
+		4C2444FC24E1F4CB00BE78BB /* TempTypeEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */; };
 		4C375E6E24DE11F400651495 /* CitiesDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C375E6D24DE11F400651495 /* CitiesDBModel.swift */; };
 		4C91AAA624E0B2390009CED6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C91AAA824E0B2390009CED6 /* Localizable.strings */; };
 		4C91AAAC24E0BAAC0009CED6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C91AAAB24E0BAAB0009CED6 /* R.generated.swift */; };
@@ -67,6 +68,7 @@
 		4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTempDegreeCellModel.swift; sourceTree = "<group>"; };
 		4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTempDegreeCell.xib; sourceTree = "<group>"; };
 		4C01993E24DEDA2500191E4C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTypeEnumeration.swift; sourceTree = "<group>"; };
 		4C375E6D24DE11F400651495 /* CitiesDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesDBModel.swift; sourceTree = "<group>"; };
 		4C91AAA224E0B1CD0009CED6 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/Main.strings"; sourceTree = "<group>"; };
 		4C91AAA324E0B1CE0009CED6 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF92C7A24DCCEE90095C45A /* Utilities.swift */,
+				4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				4CF92C6F24DCBFF10095C45A /* CityCellModel.swift in Sources */,
 				4CF92C7124DCC96F0095C45A /* CitiesListViewModel.swift in Sources */,
 				4CF92C7524DCCBD80095C45A /* Error_Response_Model.swift in Sources */,
+				4C2444FC24E1F4CB00BE78BB /* TempTypeEnumeration.swift in Sources */,
 				4CF92C6724DCB3700095C45A /* CitiesListViewController.swift in Sources */,
 				4C91AAAC24E0BAAC0009CED6 /* R.generated.swift in Sources */,
 				4CF92C6B24DCBC010095C45A /* CustomCityCell.swift in Sources */,
