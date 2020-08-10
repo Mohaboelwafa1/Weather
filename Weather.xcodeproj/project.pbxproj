@@ -163,6 +163,15 @@
 			path = CustomTempDegreeCell;
 			sourceTree = "<group>";
 		};
+		4C2444FD24E1FB9900BE78BB /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				4C01993724DEBDE100191E4C /* CustomTempDegreeCell */,
+				4CF92C6924DCBBEC0095C45A /* CityCell */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		4CF92C1F24DC90BF0095C45A = {
 			isa = PBXGroup;
 			children = (
@@ -236,8 +245,7 @@
 		4CF92C5F24DCB1010095C45A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4C01993724DEBDE100191E4C /* CustomTempDegreeCell */,
-				4CF92C6924DCBBEC0095C45A /* CityCell */,
+				4C2444FD24E1FB9900BE78BB /* CustomCells */,
 				4CF92C6524DCB3530095C45A /* Controllers */,
 				4CF92C3124DC90BF0095C45A /* Main.storyboard */,
 			);

@@ -17,6 +17,8 @@ class CitiesListViewController: UIViewController {
     var citiesListViewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
     var cellsModel: [CityCellModel] = [CityCellModel]()
 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -25,8 +27,14 @@ class CitiesListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         listOfCitiesTable.backgroundColor = .clear
         self.listOfCitiesTable.isOpaque = false;
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     func setupView() {
@@ -71,7 +79,7 @@ class CitiesListViewController: UIViewController {
             )
         }
     }
-
+    
 }
 extension CitiesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
