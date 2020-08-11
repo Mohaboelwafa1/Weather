@@ -58,11 +58,11 @@ class Utilities {
     }
 
     func isItFirstLaunch() -> Bool {
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let launchedBefore = UserDefaults.standard.bool(forKey: Keys.launchedBefore.rawValue)
         if launchedBefore  {
             return false
         } else {
-            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            UserDefaults.standard.set(true, forKey: Keys.launchedBefore.rawValue)
             return true
         }
     }

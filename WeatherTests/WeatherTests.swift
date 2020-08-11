@@ -33,11 +33,11 @@ class WeatherTests: XCTestCase {
     }
 
     func testSplashViewModel() {
-        let viewModel = SplashViewModel_Model()
+        let viewModel = SplashViewModel()
         viewModel.getCitiesList(completionHandler: {
             (result, statusCode, errorModel) in
             if statusCode == 200 {
-                UserDefaults.standard.set(true, forKey: "launchedBefore")
+                UserDefaults.standard.set(true, forKey: Keys.launchedBefore.rawValue)
             }
         })
     }
@@ -48,38 +48,38 @@ class WeatherTests: XCTestCase {
     }
 
     func testCitiesListViewModel_PrepareCell() {
-        let viewModel = CitiesListViewModel_Model()
+        let viewModel = CitiesListViewModel()
         _ = viewModel.prepareCellModel()
     }
 
     func testCitiesListViewModel_GetDataOffline() {
-        let viewModel = CitiesListViewModel_Model()
+        let viewModel = CitiesListViewModel()
         _ = viewModel.getCitiesListOffline()
         XCTAssertTrue(viewModel.citiesList?.isEmpty ?? true)
     }
 
     func testCitiesListViewModel_getCitiesList() {
-        let viewModel = CitiesListViewModel_Model()
+        let viewModel = CitiesListViewModel()
         _ = viewModel.getCitiesList(completionHandler: {
             (result, statusCode, errorModel) in
             if statusCode == 200 {
-                UserDefaults.standard.set(true, forKey: "launchedBefore")
+                UserDefaults.standard.set(true, forKey: Keys.launchedBefore.rawValue)
             }
         })
     }
 
     func testCityDetailsViewModel_prepareCellModel() {
-        let viewModel = CityDetailsViewModel_Model()
+        let viewModel = CityDetailsViewModel()
         _ = viewModel.prepareCellModel(cityName: "Amsterdam")
     }
 
     func testCityDetailsViewModel_getCityData() {
-        let viewModel = CityDetailsViewModel_Model()
+        let viewModel = CityDetailsViewModel()
         _ = viewModel.getCityData(cityName: "Amsterdam")
     }
 
     func testCityDetailsViewModel_getImageName() {
-        let viewModel = CityDetailsViewModel_Model()
+        let viewModel = CityDetailsViewModel()
         _ = viewModel.getImageName(temp: 22)
     }
 

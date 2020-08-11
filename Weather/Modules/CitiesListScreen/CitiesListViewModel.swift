@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-protocol CitiesListViewModel_View {
+protocol CitiesListViewModel_Protocol {
 
     typealias ChangeHandler = (() -> Void)
     var changeHandler: ChangeHandler? { get set }
@@ -26,7 +26,7 @@ protocol CitiesListViewModel_View {
 
 }
 
-class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
+class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
 
     var changeHandler: ChangeHandler?
     var citiesResponseModel: [CitiesResponseModel]

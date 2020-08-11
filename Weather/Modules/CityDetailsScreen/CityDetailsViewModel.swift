@@ -8,24 +8,26 @@
 
 import RealmSwift
 
-protocol CityDetailsViewModel_View {
+protocol CityDetailsViewModel_Protocol {
     typealias ChangeHandler = (() -> Void)
     var changeHandler: ChangeHandler? { get set }
+    var degreesList : Results<CitiesDBModel>? { get set }
+    var cellsModel : [CustomTempDegreeCellModel] { get set }
+
     func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel]
     func getCityData(cityName: String) -> Results<CitiesDBModel>?
     func getImageName(temp: Double) -> String
-    var cellsModel : [CustomTempDegreeCellModel] { get set }
-    var degreesList : Results<CitiesDBModel>? { get set }
+
 }
 
-class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View {
+class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
     var changeHandler: ChangeHandler?
     var degreesList: Results<CitiesDBModel>?
     var cellsModel: [CustomTempDegreeCellModel]
 
     override init() {
-        cellsModel = [CustomTempDegreeCellModel]()
         degreesList = nil
+        cellsModel = [CustomTempDegreeCellModel]()
         super.init()
     }
 
@@ -64,7 +66,7 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
         case let temp where temp > 27.5:
             return R.image.sunnyIcon()!.accessibilityIdentifier!
         default:
-            return "unkown"
+            return R.image.unknownWeather()!.accessibilityIdentifier!
         }
     }
 }

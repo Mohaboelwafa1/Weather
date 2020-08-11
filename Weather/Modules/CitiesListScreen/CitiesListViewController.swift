@@ -14,7 +14,7 @@ class CitiesListViewController: UIViewController {
     @IBOutlet weak var backGroundImage: AsyncImageView!
 
     private let refreshControl = UIRefreshControl()
-    var viewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
+    var viewModel = CitiesListViewModel()
     var cellsModel: [CityCellModel] = [CityCellModel]()
 
     override func viewDidLoad() {

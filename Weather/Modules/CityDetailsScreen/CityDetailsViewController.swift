@@ -15,7 +15,7 @@ class CityDetailsViewController: UIViewController {
     @IBOutlet weak var backGroundImage: AsyncImageView!
     
     var cityName: String?
-    var viewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
+    var viewModel = CityDetailsViewModel()
     var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
 
     deinit {

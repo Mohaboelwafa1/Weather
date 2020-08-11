@@ -114,10 +114,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
     /// Image `CloudyIcon`.
     static let cloudyIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "CloudyIcon")
+    /// Image `ConnectionError`.
+    static let connectionError = Rswift.ImageResource(bundle: R.hostingBundle, name: "ConnectionError")
     /// Image `DayBG`.
     static let dayBG = Rswift.ImageResource(bundle: R.hostingBundle, name: "DayBG")
     /// Image `LaunchScreenBG`.
@@ -132,11 +134,20 @@ struct R: Rswift.Validatable {
     static let sunnyIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "SunnyIcon")
     /// Image `cityPlaceHolder`.
     static let cityPlaceHolder = Rswift.ImageResource(bundle: R.hostingBundle, name: "cityPlaceHolder")
+    /// Image `unknownWeather`.
+    static let unknownWeather = Rswift.ImageResource(bundle: R.hostingBundle, name: "unknownWeather")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "CloudyIcon", bundle: ..., traitCollection: ...)`
     static func cloudyIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.cloudyIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ConnectionError", bundle: ..., traitCollection: ...)`
+    static func connectionError(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.connectionError, compatibleWith: traitCollection)
     }
     #endif
 
@@ -186,6 +197,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "cityPlaceHolder", bundle: ..., traitCollection: ...)`
     static func cityPlaceHolder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.cityPlaceHolder, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "unknownWeather", bundle: ..., traitCollection: ...)`
+    static func unknownWeather(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.unknownWeather, compatibleWith: traitCollection)
     }
     #endif
 

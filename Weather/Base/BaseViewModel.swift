@@ -9,14 +9,14 @@
 import Foundation
 import RealmSwift
 
-protocol BaseViewModel_View {
+protocol BaseViewModel_Protocol {
     func getDate(date: String?) -> String
     func getTime(date: String?) -> String
     func ConvertTempreture(temp: Double , type: TempTypeEnumeration) -> Double
     func getMonthName(month:Int) -> String
 }
 
-class BaseViewModel_Model: NSObject, BaseViewModel_View {
+class BaseViewModel: NSObject, BaseViewModel_Protocol {
 
     override init() {
         super.init()

@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-protocol SplashViewModel_View {
+protocol SplashViewModel_Protocol {
 
     typealias ChangeHandler = (() -> Void)
     var changeHandler: ChangeHandler? { get set }
@@ -20,7 +20,7 @@ protocol SplashViewModel_View {
 
 }
 
-class SplashViewModel_Model: NSObject, SplashViewModel_View {
+class SplashViewModel: NSObject, SplashViewModel_Protocol {
 
     var changeHandler: ChangeHandler?
 

@@ -11,7 +11,7 @@ import UIKit
 class SplashViewController : UIViewController {
 
     @IBOutlet weak var launchScreenBGImage: AsyncImageView!
-    var viewModel: SplashViewModel_View  = SplashViewModel_Model()
+    var viewModel = SplashViewModel()
 
     deinit {
         print("deinit \(self)")
@@ -38,18 +38,18 @@ class SplashViewController : UIViewController {
                 self.viewModel.getCitiesList(completionHandler: {
                     (result, statusCode, errorModel)in
                     if statusCode == 200 {
-                        UserDefaults.standard.set(true, forKey: "launchedBefore")
+                        UserDefaults.standard.set(true, forKey: Keys.launchedBefore.rawValue)
                     }
                 })
             }
         } else {
-            UserDefaults.standard.set(false, forKey: "launchedBefore")
+            UserDefaults.standard.set(false, forKey: Keys.launchedBefore.rawValue)
             Utilities.shared.showConnectionError(
                 view: self,
                 title: R.string.localizable.connectionError(),
                 duration: 2.0,
                 message: R.string.localizable.retryConnect(),
-                image: R.image.cloudyIcon()
+                image: R.image.connectionError()
             )
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
