@@ -21,11 +21,7 @@ protocol CityDetailsViewModel_View {
 class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View {
     var changeHandler: ChangeHandler?
     var degreesList: Results<CitiesDBModel>?
-    var cellsModel: [CustomTempDegreeCellModel] {
-        didSet {
-            self.changeHandler?()
-        }
-    }
+    var cellsModel: [CustomTempDegreeCellModel]
 
     override init() {
         cellsModel = [CustomTempDegreeCellModel]()
@@ -48,6 +44,7 @@ class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View
             model.iconImage = self.getImageName(temp: celsuisDegree)
             cellsModel.append(model)
         }
+        self.changeHandler?()
         return cellsModel
     }
     func getCityData(cityName: String) -> Results<CitiesDBModel>? {

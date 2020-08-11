@@ -27,11 +27,7 @@ protocol CitiesListViewModel_View {
 class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
     var changeHandler: ChangeHandler?
     var citiesResponseModel: [CitiesResponseModel]
-    var cellsModel: [CityCellModel] {
-        didSet {
-            self.changeHandler?()
-        }
-    }
+    var cellsModel: [CityCellModel]
     var citiesList: Results<CitiesDBModel>?
 
     override init() {
@@ -57,6 +53,7 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
             model.backGroundImage = row.cityPicture ?? ""
             cellsModel.append(model)
         }
+        self.changeHandler?()
         return cellsModel
     }
 
