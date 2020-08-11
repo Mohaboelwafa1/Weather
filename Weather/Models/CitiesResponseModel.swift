@@ -7,13 +7,13 @@
 //
 import Foundation
 struct CitiesResponseModel : Codable {
+
     let date : String?
     let city : City?
     let tempType : String?
     let temp : Double?
 
     enum CodingKeys: String, CodingKey {
-
         case date = "date"
         case city = "city"
         case tempType = "tempType"
@@ -41,7 +41,5 @@ struct CitiesResponseModel : Codable {
         aCoder.encode(tempType, forKey: "tempType")
         aCoder.encode(temp, forKey: "temp")
     }
-
-
 
 }

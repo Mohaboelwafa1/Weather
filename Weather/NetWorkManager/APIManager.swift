@@ -9,6 +9,7 @@
 import SwiftyJSON
 
 class APIManager: NSObject, OperationalRepository {
+
     func GetCitiesList(completionHandler: @escaping (_ result:[CitiesResponseModel]?, _ statusCode : Int, _ error_Response_Model:Error_Response_Model?) -> Void) {
         let Newurl = BaseApi.mainPath + "\(EndPoint.citiesList.path)"
         excuteServerOperation(url: Newurl, way: .get, completionHandler: { (result, statusCode, errorModel ) in
@@ -28,5 +29,6 @@ class APIManager: NSObject, OperationalRepository {
             catch{}
         } )
     }
+
 }
 

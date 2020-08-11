@@ -58,7 +58,7 @@
                 <outlet property="temperatureLabel" destination="EWS-ah-JhK" id="bnS-9D-GTv"/>
                 <outlet property="timeLabel" destination="tej-eQ-DFi" id="lXf-fV-7SI"/>
             </connections>
-            <point key="canvasLocation" x="-215.94202898550725" y="82.366071428571431"/>
+            <point key="canvasLocation" x="-99" y="48"/>
         </tableViewCell>
     </objects>
 </document>

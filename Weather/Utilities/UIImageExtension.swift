@@ -9,9 +9,10 @@
 import UIKit
 
 extension UIImage {
+
     class func decodedImage(_ image: UIImage) -> UIImage? {
         guard let newImage = image.cgImage else { return nil }
-        // To optimize this, you can some cache control.
+
         let colorspace = CGColorSpaceCreateDeviceRGB()
         let context = CGContext(data: nil,
                                 width: newImage.width,
@@ -30,4 +31,5 @@ extension UIImage {
 
         return nil
     }
+
 }

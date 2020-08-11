@@ -41,7 +41,9 @@ class CityDetailsViewController: UIViewController {
     }
 
     func setupView() {
-        if cityName != nil {cityNameLabel.text = cityName!}
+        if let cityname = cityName {
+            cityNameLabel.text = cityname
+        }
         listOfCityDegrees.register(CustomTempDegreeCell.self, forCellReuseIdentifier: "CustomTempDegreeCell")
         self.listOfCityDegrees.register(UINib(nibName: "CustomTempDegreeCell",bundle: nil), forCellReuseIdentifier: "CustomTempDegreeCell")
     }
@@ -60,9 +62,11 @@ class CityDetailsViewController: UIViewController {
     @IBAction func swipeMade(_ sender: UISwipeGestureRecognizer) {
         navigationController?.popViewController(animated: true)
     }
+
 }
 
 extension CityDetailsViewController : UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cellsModel.count
     }
@@ -76,11 +80,14 @@ extension CityDetailsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+
 }
 
 extension CityDetailsViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
     }
+
 }
 

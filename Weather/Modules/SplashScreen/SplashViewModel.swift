@@ -9,6 +9,7 @@
 import RealmSwift
 
 protocol SplashViewModel_View {
+
     typealias ChangeHandler = (() -> Void)
     var changeHandler: ChangeHandler? { get set }
     func getCitiesList(completionHandler: @escaping (
@@ -16,9 +17,11 @@ protocol SplashViewModel_View {
         _ statusCode : Int,
         _ error_Response_Model:Error_Response_Model
         ) -> Void)
+
 }
 
 class SplashViewModel_Model: NSObject, SplashViewModel_View {
+
     var changeHandler: ChangeHandler?
 
     override init() {
@@ -50,4 +53,5 @@ class SplashViewModel_Model: NSObject, SplashViewModel_View {
             completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
         })
     }
+
 }

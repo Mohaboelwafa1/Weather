@@ -9,6 +9,7 @@
 import RealmSwift
 
 protocol CitiesListViewModel_View {
+
     typealias ChangeHandler = (() -> Void)
     var changeHandler: ChangeHandler? { get set }
     var citiesResponseModel: [CitiesResponseModel] { get }
@@ -22,9 +23,11 @@ protocol CitiesListViewModel_View {
         _ statusCode : Int,
         _ error_Response_Model:Error_Response_Model
         ) -> Void)
+
 }
 
 class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
+
     var changeHandler: ChangeHandler?
     var citiesResponseModel: [CitiesResponseModel]
     var cellsModel: [CityCellModel]
@@ -91,4 +94,5 @@ class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
             completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
         })
     }
+
 }

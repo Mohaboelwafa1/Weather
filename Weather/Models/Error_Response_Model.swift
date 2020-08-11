@@ -7,13 +7,13 @@
 //
 
 import Foundation
-// ERROR RESPONSE MODEL //////////////////
+
 struct Error_Response_Model : Codable {
+
     var code : String?
     var message : String?
 
     enum CodingKeys: String, CodingKey {
-
         case code = "code"
         case message = "Error happend , Please try again"
     }
@@ -33,4 +33,5 @@ struct Error_Response_Model : Codable {
         aCoder.encode(code, forKey: "code")
         aCoder.encode(message, forKey: "message")
     }
+
 }

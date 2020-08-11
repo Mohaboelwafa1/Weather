@@ -7,12 +7,13 @@
 //
 
 import Foundation
+
 struct City : Codable {
+
     let name : String?
     let picture : String?
 
     enum CodingKeys: String, CodingKey {
-
         case name = "name"
         case picture = "picture"
     }
@@ -21,6 +22,7 @@ struct City : Codable {
         name = ""
         picture = ""
     }
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decodeIfPresent(String.self, forKey: .name)
@@ -28,9 +30,8 @@ struct City : Codable {
     }
 
     func encode(with aCoder: NSCoder) {
-
-    aCoder.encode(name, forKey: "name")
-    aCoder.encode(picture, forKey: "picture")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(picture, forKey: "picture")
     }
 
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 class AsyncImageView: UIView {
+
     private var _image: UIImage?
 
     var image: UIImage? {
@@ -34,4 +35,5 @@ class AsyncImageView: UIView {
             }
         }
     }
+
 }

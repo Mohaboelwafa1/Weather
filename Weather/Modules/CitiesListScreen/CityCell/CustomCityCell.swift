@@ -64,4 +64,5 @@ class CustomCityCell : UITableViewCell {
                 .cacheOriginalImage
             ])
     }
+
 }

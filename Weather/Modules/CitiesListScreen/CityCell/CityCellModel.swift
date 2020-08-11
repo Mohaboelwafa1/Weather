@@ -34,4 +34,5 @@ struct CityCellModel : Codable {
         temp = try values.decodeIfPresent(String.self, forKey: .temp)!
         backGroundImage = try values.decodeIfPresent(String.self, forKey: .backGroundImage)!
     }
+
 }
