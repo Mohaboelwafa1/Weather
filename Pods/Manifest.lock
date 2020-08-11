@@ -3,6 +3,7 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
+  - netfox (1.19.0)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
@@ -18,6 +19,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Kingfisher (~> 5.0)
+  - netfox
   - R.swift
   - RealmSwift (~> 3.20.0)
   - SwiftLint (~> 0.36.0)
@@ -28,6 +30,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - netfox
     - R.swift
     - R.swift.Library
     - Realm
@@ -39,6 +42,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  netfox: efeec1d23406df6cd605212f09a40957bb5654eb
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 9355e2c60f2db546ad908d65a304417b87fbd1cd
+PODFILE CHECKSUM: d086edba5101d43ef64c3d281c150140d8dc4c3b
 
 COCOAPODS: 1.8.4
