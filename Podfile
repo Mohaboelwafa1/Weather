@@ -15,7 +15,6 @@ target 'Weather' do
   pod 'R.swift'
   pod 'Toast-Swift', '~> 5.0.1'
 
-
   target 'WeatherTests' do
     inherit! :search_paths
     # Pods for testing

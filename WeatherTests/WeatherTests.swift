@@ -47,7 +47,6 @@ class WeatherTests: XCTestCase {
         viewController.fetchWeatherData()
     }
 
-
     func testCitiesListViewModel_PrepareCell() {
         let viewModel = CitiesListViewModel_Model()
         _ = viewModel.prepareCellModel()
@@ -58,7 +57,6 @@ class WeatherTests: XCTestCase {
         _ = viewModel.getCitiesListOffline()
         XCTAssertTrue(viewModel.citiesList?.isEmpty ?? true)
     }
-
 
     func testCitiesListViewModel_getCitiesList() {
         let viewModel = CitiesListViewModel_Model()
