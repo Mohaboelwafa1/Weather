@@ -15,6 +15,7 @@
 		4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */; };
 		4C01993F24DEDA2500191E4C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993E24DEDA2500191E4C /* SplashViewModel.swift */; };
 		4C1F67D724E200E500AF3765 /* EndPointEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F67D624E200E500AF3765 /* EndPointEnumeration.swift */; };
+		4C1F67DF24E21D9C00AF3765 /* DroppingFramesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F67DE24E21D9C00AF3765 /* DroppingFramesHelper.swift */; };
 		4C2444FC24E1F4CB00BE78BB /* TempTypeEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */; };
 		4C375E6E24DE11F400651495 /* CitiesDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C375E6D24DE11F400651495 /* CitiesDBModel.swift */; };
 		4C91AAA624E0B2390009CED6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C91AAA824E0B2390009CED6 /* Localizable.strings */; };
@@ -70,6 +71,7 @@
 		4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTempDegreeCell.xib; sourceTree = "<group>"; };
 		4C01993E24DEDA2500191E4C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		4C1F67D624E200E500AF3765 /* EndPointEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointEnumeration.swift; sourceTree = "<group>"; };
+		4C1F67DE24E21D9C00AF3765 /* DroppingFramesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppingFramesHelper.swift; sourceTree = "<group>"; };
 		4C2444FB24E1F4CB00BE78BB /* TempTypeEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTypeEnumeration.swift; sourceTree = "<group>"; };
 		4C375E6D24DE11F400651495 /* CitiesDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesDBModel.swift; sourceTree = "<group>"; };
 		4C91AAA224E0B1CD0009CED6 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF92C7A24DCCEE90095C45A /* Utilities.swift */,
+				4C1F67DE24E21D9C00AF3765 /* DroppingFramesHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				4C01993424DEACD900191E4C /* CityDetailsViewController.swift in Sources */,
 				4CE89C9124DF281200B0F192 /* CityDetailsViewModel.swift in Sources */,
 				4CE89C9324DF3F3F00B0F192 /* BaseViewModel.swift in Sources */,
+				4C1F67DF24E21D9C00AF3765 /* DroppingFramesHelper.swift in Sources */,
 				4C1F67D724E200E500AF3765 /* EndPointEnumeration.swift in Sources */,
 				4CF92C2E24DC90BF0095C45A /* SceneDelegate.swift in Sources */,
 				4CF92C6224DCB19F0095C45A /* CitiesResponseModel.swift in Sources */,

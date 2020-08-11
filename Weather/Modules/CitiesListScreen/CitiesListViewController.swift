@@ -96,7 +96,6 @@ extension CitiesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.listOfCitiesTable!.dequeueReusableCell(withIdentifier: "CustomCityCell")! as! CustomCityCell
         (cell as! CustomCityCell).setModel(model: cellsModel[indexPath.row])
-        cell.selectionStyle = .none
         return cell
     }
 

@@ -71,7 +71,6 @@ extension CityDetailsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = self.listOfCityDegrees!.dequeueReusableCell(withIdentifier: "CustomTempDegreeCell")! as! CustomTempDegreeCell
         (cell as! CustomTempDegreeCell).setModel(model: cellsModel[indexPath.row])
-        cell.selectionStyle = .none
         return cell
     }
 
