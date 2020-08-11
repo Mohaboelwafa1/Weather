@@ -9,7 +9,8 @@
 import RealmSwift
 
 protocol SplashViewModel_View {
-    var citiesResponseModel: [CitiesResponseModel] { get }
+    typealias ChangeHandler = (() -> Void)
+    var changeHandler: ChangeHandler? { get set }
     func getCitiesList(completionHandler: @escaping (
         _ ResponseModel:Results<CitiesDBModel>?,
         _ statusCode : Int,
@@ -18,11 +19,9 @@ protocol SplashViewModel_View {
 }
 
 class SplashViewModel_Model: NSObject, SplashViewModel_View {
-
-    var citiesResponseModel: [CitiesResponseModel]
+    var changeHandler: ChangeHandler?
 
     override init() {
-        citiesResponseModel = [CitiesResponseModel]()
         super.init()
     }
 
@@ -47,6 +46,7 @@ class SplashViewModel_Model: NSObject, SplashViewModel_View {
             }
 
             let citiesList = realm.objects(CitiesDBModel.self)
+            self.changeHandler?()
             completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
         })
     }

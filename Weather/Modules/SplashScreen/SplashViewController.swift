@@ -11,10 +11,19 @@ import UIKit
 class SplashViewController : UIViewController {
 
     @IBOutlet weak var launchScreenBGImage: UIImageView!
-    var splashViewModel: SplashViewModel_View  = SplashViewModel_Model()
+    var viewModel: SplashViewModel_View  = SplashViewModel_Model()
+
+    deinit {
+        print("deinit \(self)")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel.changeHandler = { [weak self] in
+            self?.goToCitiesListScreen()
+        }
+
         if Utilities.shared.isItFirstLaunch() {
             fetchWeatherData()
         } else {
@@ -26,11 +35,10 @@ class SplashViewController : UIViewController {
         if Utilities.shared.isConnectedToNetwork() {
             Utilities.shared.ShowIndicator(title: nil, message:  R.string.localizable.pleaseWait(), controller: self)
             DispatchQueue.global(qos: .background).async {
-                self.splashViewModel.getCitiesList(completionHandler: {
+                self.viewModel.getCitiesList(completionHandler: {
                     (result, statusCode, errorModel)in
                     if statusCode == 200 {
                         UserDefaults.standard.set(true, forKey: "launchedBefore")
-                        self.goToCitiesListScreen()
                     }
                 })
             }
