@@ -28,7 +28,66 @@ class WeatherTests: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
+            testSplashViewModel()
         }
+    }
+
+    func testSplashViewModel() {
+        let viewModel = SplashViewModel_Model()
+        viewModel.getCitiesList(completionHandler: {
+            (result, statusCode, errorModel) in
+            if statusCode == 200 {
+                UserDefaults.standard.set(true, forKey: "launchedBefore")
+            }
+        })
+    }
+
+    func testSplashViewControllerFunctionality() {
+        let viewController = SplashViewController()
+        viewController.fetchWeatherData()
+    }
+
+
+    func testCitiesListViewModel_PrepareCell() {
+        let viewModel = CitiesListViewModel_Model()
+        _ = viewModel.prepareCellModel()
+    }
+
+    func testCitiesListViewModel_GetDataOffline() {
+        let viewModel = CitiesListViewModel_Model()
+        _ = viewModel.getCitiesListOffline()
+        XCTAssertTrue(viewModel.citiesList?.isEmpty ?? true)
+    }
+
+
+    func testCitiesListViewModel_getCitiesList() {
+        let viewModel = CitiesListViewModel_Model()
+        _ = viewModel.getCitiesList(completionHandler: {
+            (result, statusCode, errorModel) in
+            if statusCode == 200 {
+                UserDefaults.standard.set(true, forKey: "launchedBefore")
+            }
+        })
+    }
+
+    func testCityDetailsViewModel_prepareCellModel() {
+        let viewModel = CityDetailsViewModel_Model()
+        _ = viewModel.prepareCellModel(cityName: "Amsterdam")
+    }
+
+    func testCityDetailsViewModel_getCityData() {
+        let viewModel = CityDetailsViewModel_Model()
+        _ = viewModel.getCityData(cityName: "Amsterdam")
+    }
+
+    func testCityDetailsViewModel_getImageName() {
+        let viewModel = CityDetailsViewModel_Model()
+        _ = viewModel.getImageName(temp: 22)
+    }
+
+    func testCityDetailsViewController_fetchData() {
+        let viewController = CityDetailsViewController()
+        viewController.fetchData()
     }
 
 }
