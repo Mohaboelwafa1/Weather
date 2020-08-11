@@ -10,7 +10,7 @@ import UIKit
 
 class SplashViewController : UIViewController {
 
-    @IBOutlet weak var launchScreenBGImage: UIImageView!
+    @IBOutlet weak var launchScreenBGImage: AsyncImageView!
     var viewModel: SplashViewModel_View  = SplashViewModel_Model()
 
     deinit {

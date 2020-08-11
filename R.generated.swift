@@ -755,6 +755,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "LaunchScreenBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'LaunchScreenBG' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "NightBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NightBG' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().citiesListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'citiesListViewController' could not be loaded from storyboard 'Main' as 'CitiesListViewController'.") }

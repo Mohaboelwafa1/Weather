@@ -12,7 +12,7 @@ class CityDetailsViewController: UIViewController {
 
     @IBOutlet weak var listOfCityDegrees : UITableView!
     @IBOutlet weak var cityNameLabel: UILabel!
-    @IBOutlet weak var backGroundImage: UIImageView!
+    @IBOutlet weak var backGroundImage: AsyncImageView!
     
     var cityName: String?
     var viewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
@@ -44,7 +44,6 @@ class CityDetailsViewController: UIViewController {
         if cityName != nil {cityNameLabel.text = cityName!}
         listOfCityDegrees.register(CustomTempDegreeCell.self, forCellReuseIdentifier: "CustomTempDegreeCell")
         self.listOfCityDegrees.register(UINib(nibName: "CustomTempDegreeCell",bundle: nil), forCellReuseIdentifier: "CustomTempDegreeCell")
-        self.backGroundImage.image = R.image.nightBG()
     }
 
     func fetchData(){

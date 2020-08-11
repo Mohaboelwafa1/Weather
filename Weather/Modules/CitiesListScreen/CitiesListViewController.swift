@@ -11,7 +11,7 @@ import UIKit
 class CitiesListViewController: UIViewController {
 
     @IBOutlet weak var listOfCitiesTable : UITableView!
-    @IBOutlet weak var backGroundImage: UIImageView!
+    @IBOutlet weak var backGroundImage: AsyncImageView!
 
     private let refreshControl = UIRefreshControl()
     var viewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
@@ -54,7 +54,6 @@ class CitiesListViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
 
-        self.backGroundImage.image = R.image.nightBG()
         self.backGroundImage.alpha = 0.05
     }
 

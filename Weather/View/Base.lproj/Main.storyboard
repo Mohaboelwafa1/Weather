@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZv-Bx-GhZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884.057971014493" y="53.571428571428569"/>
+            <point key="canvasLocation" x="1816" y="54"/>
         </scene>
         <!--Cities List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -45,8 +45,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Kc-EU-ehu">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NightBG" translatesAutoresizingMaskIntoConstraints="NO" id="0Kc-EU-ehu">
+                                <rect key="frame" x="0.0" y="5" width="414.00000000000006" height="896"/>
                             </imageView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UyP-lM-cMO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2589.8550724637685" y="53.571428571428569"/>
+            <point key="canvasLocation" x="2610" y="54"/>
         </scene>
         <!--City Details View Controller-->
         <scene sceneID="87S-bz-Zys">
@@ -89,8 +89,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DTG-BS-CMC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NightBG" translatesAutoresizingMaskIntoConstraints="NO" id="DTG-BS-CMC">
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000006" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amsterdam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-XB-wVg">
                                 <rect key="frame" x="20" y="94" width="374" height="50"/>
@@ -159,5 +159,6 @@
     </scenes>
     <resources>
         <image name="LaunchScreenBG" width="208.5" height="208.5"/>
+        <image name="NightBG" width="208.5" height="139"/>
     </resources>
 </document>
