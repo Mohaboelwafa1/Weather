@@ -9,7 +9,8 @@
 import RealmSwift
 
 protocol CitiesListViewModel_View {
-    
+    typealias ChangeHandler = (() -> Void)
+    var changeHandler: ChangeHandler? { get set }
     var citiesResponseModel: [CitiesResponseModel] { get }
     var cellsModel : [CityCellModel] { get set }
     var citiesList : Results<CitiesDBModel>? { get set }
@@ -24,9 +25,13 @@ protocol CitiesListViewModel_View {
 }
 
 class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
-    
+    var changeHandler: ChangeHandler?
     var citiesResponseModel: [CitiesResponseModel]
-    var cellsModel: [CityCellModel]
+    var cellsModel: [CityCellModel] {
+        didSet {
+            self.changeHandler?()
+        }
+    }
     var citiesList: Results<CitiesDBModel>?
 
     override init() {

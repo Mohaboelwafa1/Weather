@@ -14,15 +14,22 @@ class CitiesListViewController: UIViewController {
     @IBOutlet weak var backGroundImage: UIImageView!
 
     private let refreshControl = UIRefreshControl()
-    var citiesListViewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
+    var viewModel: CitiesListViewModel_View  = CitiesListViewModel_Model()
     var cellsModel: [CityCellModel] = [CityCellModel]()
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel.changeHandler = { [weak self] in
+            self?.listOfCitiesTable.reloadData()
+        }
+
         setupView()
         fetchWeatherData()
+    }
+
+    deinit {
+        print("deinit \(self)")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,8 +59,8 @@ class CitiesListViewController: UIViewController {
     }
 
     func fetchWeatherData() {
-        _ = citiesListViewModel.getCitiesListOffline()
-        cellsModel = citiesListViewModel.prepareCellModel()
+        _ = viewModel.getCitiesListOffline()
+        cellsModel = viewModel.prepareCellModel()
         self.listOfCitiesTable.isHidden = false
         self.refreshControl.endRefreshing()
     }
@@ -61,7 +68,7 @@ class CitiesListViewController: UIViewController {
     @objc private func refreshWeatherData(_ sender: Any) {
         if Utilities.shared.isConnectedToNetwork() {
             DispatchQueue.global(qos: .background).async {
-                self.citiesListViewModel.getCitiesList(completionHandler: {
+                self.viewModel.getCitiesList(completionHandler: {
                     (result, statusCode, errorModel)in
                     if statusCode == 200 {
                         self.refreshControl.endRefreshing()
