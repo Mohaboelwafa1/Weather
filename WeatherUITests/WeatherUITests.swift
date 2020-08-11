@@ -40,4 +40,11 @@ class WeatherUITests: XCTestCase {
             }
         }
     }
+
+    func testClickToDetailsView() {
+        let app = XCUIApplication()
+        app.activate()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Amsterdam"]/*[[".cells.staticTexts[\"Amsterdam\"]",".staticTexts[\"Amsterdam\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Weather.CityDetailsView"].buttons["Back"].tap()
+    }
 }
