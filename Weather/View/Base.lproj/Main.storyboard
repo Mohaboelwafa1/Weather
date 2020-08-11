@@ -84,7 +84,7 @@
         <!--City Details View Controller-->
         <scene sceneID="87S-bz-Zys">
             <objects>
-                <viewController storyboardIdentifier="CityDetailsViewController" id="wMC-ee-ujg" customClass="CityDetailsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="CityDetailsViewController" storyboardIdentifier="CityDetailsViewController" id="wMC-ee-ujg" customClass="CityDetailsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="89S-f9-wsI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

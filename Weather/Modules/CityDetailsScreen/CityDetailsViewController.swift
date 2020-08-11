@@ -15,8 +15,12 @@ class CityDetailsViewController: UIViewController {
     @IBOutlet weak var backGroundImage: UIImageView!
     
     var cityName: String?
-    var cityDetailsViewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
+    var viewModel: CityDetailsViewModel_View  = CityDetailsViewModel_Model()
     var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
+
+    deinit {
+        print("deinit \(self)")
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,6 +30,11 @@ class CityDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel.changeHandler = { [weak self] in
+            self?.listOfCityDegrees.reloadData()
+        }
+
         setupView()
         fetchData()
         addBackGesture()
@@ -40,7 +49,7 @@ class CityDetailsViewController: UIViewController {
 
     func fetchData(){
         guard cityName != nil else {return}
-        cellsModel = cityDetailsViewModel.prepareCellModel(cityName: cityName!)
+        cellsModel = viewModel.prepareCellModel(cityName: cityName!)
     }
 
     func addBackGesture() {

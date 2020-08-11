@@ -9,6 +9,8 @@
 import RealmSwift
 
 protocol CityDetailsViewModel_View {
+    typealias ChangeHandler = (() -> Void)
+    var changeHandler: ChangeHandler? { get set }
     func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel]
     func getCityData(cityName: String) -> Results<CitiesDBModel>?
     func getImageName(temp: Double) -> String
@@ -17,8 +19,13 @@ protocol CityDetailsViewModel_View {
 }
 
 class CityDetailsViewModel_Model: BaseViewModel_Model, CityDetailsViewModel_View {
+    var changeHandler: ChangeHandler?
     var degreesList: Results<CitiesDBModel>?
-    var cellsModel: [CustomTempDegreeCellModel]
+    var cellsModel: [CustomTempDegreeCellModel] {
+        didSet {
+            self.changeHandler?()
+        }
+    }
 
     override init() {
         cellsModel = [CustomTempDegreeCellModel]()

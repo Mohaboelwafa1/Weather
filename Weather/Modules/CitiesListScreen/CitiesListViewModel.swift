@@ -9,6 +9,7 @@
 import RealmSwift
 
 protocol CitiesListViewModel_View {
+    
     var citiesResponseModel: [CitiesResponseModel] { get }
     var cellsModel : [CityCellModel] { get set }
     var citiesList : Results<CitiesDBModel>? { get set }
@@ -23,7 +24,7 @@ protocol CitiesListViewModel_View {
 }
 
 class CitiesListViewModel_Model: BaseViewModel_Model, CitiesListViewModel_View {
-
+    
     var citiesResponseModel: [CitiesResponseModel]
     var cellsModel: [CityCellModel]
     var citiesList: Results<CitiesDBModel>?
