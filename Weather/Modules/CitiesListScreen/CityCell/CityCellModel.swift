@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-struct CityCellModel : Codable {
+struct CityCellModel: Codable {
 
     var currentTime : String
     var cityName : String

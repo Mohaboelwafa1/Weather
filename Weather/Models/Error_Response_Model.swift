@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Error_Response_Model : Codable {
+struct Error_Response_Model: Codable {
 
     var code : String?
     var message : String?

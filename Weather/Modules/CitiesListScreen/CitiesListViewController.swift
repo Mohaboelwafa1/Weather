@@ -17,9 +17,14 @@ class CitiesListViewController: UIViewController {
     var viewModel = CitiesListViewModel()
     var cellsModel: [CityCellModel] = [CityCellModel]()
 
+    // NOTE : Track if there is memory leak. If this is called so it is ok.
+    deinit {
+        print("deinit \(self)")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // NOTE : Get notified when there is some changes in the view model and update the UI
         viewModel.changeHandler = { [weak self] in
             self?.listOfCitiesTable.reloadData()
         }
@@ -28,9 +33,6 @@ class CitiesListViewController: UIViewController {
         fetchWeatherData()
     }
 
-    deinit {
-        print("deinit \(self)")
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,8 +47,6 @@ class CitiesListViewController: UIViewController {
     }
 
     func setupView() {
-        self.navigationItem.setHidesBackButton(true, animated: true)
-
         listOfCitiesTable.register(CustomCityCell.self, forCellReuseIdentifier: "CustomCityCell")
         listOfCitiesTable.register(UINib(nibName: "CustomCityCell",bundle: nil), forCellReuseIdentifier: "CustomCityCell")
 

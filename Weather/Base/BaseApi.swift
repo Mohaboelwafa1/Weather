@@ -7,6 +7,6 @@
 //
 
 struct BaseApi {
-    // THE REAL SERVER
+    // NOTE: THE REAL SERVER
     static let mainPath = "https://us-central1-mobile-assignment-server.cloudfunctions.net"
 }

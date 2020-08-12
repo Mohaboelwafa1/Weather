@@ -34,6 +34,7 @@ class Utilities {
         return (isReachable && !needsConnection)
     }
 
+    // NOTE: Show loading indicator
     func ShowIndicator(title: String?, message: String, controller: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -57,6 +58,7 @@ class Utilities {
         }
     }
 
+    // NOTE: Check if the application ran before or not
     func isItFirstLaunch() -> Bool {
         let launchedBefore = UserDefaults.standard.bool(forKey: Keys.launchedBefore.rawValue)
         if launchedBefore  {

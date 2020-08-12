@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 import Foundation
-struct CitiesResponseModel : Codable {
+struct CitiesResponseModel: Codable {
 
     let date : String?
     let city : City?

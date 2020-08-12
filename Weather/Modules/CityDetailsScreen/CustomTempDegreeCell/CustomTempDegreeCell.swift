@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTempDegreeCell : UITableViewCell {
+class CustomTempDegreeCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!

@@ -7,7 +7,7 @@
 //
 import RealmSwift
 
-class CitiesDBModel : Object {
+class CitiesDBModel: Object {
     @objc dynamic var date: String?
     @objc dynamic var cityName: String?
     @objc dynamic var cityPicture: String?

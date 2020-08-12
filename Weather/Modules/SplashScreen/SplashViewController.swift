@@ -8,18 +8,19 @@
 
 import UIKit
 
-class SplashViewController : UIViewController {
+class SplashViewController: UIViewController {
 
     @IBOutlet weak var launchScreenBGImage: AsyncImageView!
     var viewModel = SplashViewModel()
 
+    // NOTE : Track if there is memory leak. If this is called so it is ok.
     deinit {
         print("deinit \(self)")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // NOTE : Get notified when there is some changes in the view model and update the UI
         viewModel.changeHandler = { [weak self] in
             self?.goToCitiesListScreen()
         }
@@ -29,6 +30,11 @@ class SplashViewController : UIViewController {
         } else {
             goToCitiesListScreen()
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     func fetchWeatherData() {
@@ -59,14 +65,12 @@ class SplashViewController : UIViewController {
     }
 
     func goToCitiesListScreen() {
+        // NOTE : Hide the loader
         self.dismiss(animated: false, completion: nil)
+
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let cityListViewController = storyBoard.instantiateViewController(withIdentifier: "CitiesListViewController") as! CitiesListViewController
         self.navigationController?.pushViewController(cityListViewController, animated: true)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
 }

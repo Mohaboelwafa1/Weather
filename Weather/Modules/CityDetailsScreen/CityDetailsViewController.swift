@@ -18,19 +18,14 @@ class CityDetailsViewController: UIViewController {
     var viewModel = CityDetailsViewModel()
     var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
 
+    // NOTE : Track if there is memory leak. If this is called so it is ok.
     deinit {
         print("deinit \(self)")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        listOfCityDegrees.backgroundColor = .clear
-        self.listOfCityDegrees.isOpaque = false;
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // NOTE : Get notified when there is some changes in the view model and update the UI
         viewModel.changeHandler = { [weak self] in
             self?.listOfCityDegrees.reloadData()
         }
@@ -38,6 +33,12 @@ class CityDetailsViewController: UIViewController {
         setupView()
         fetchData()
         addBackGesture()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listOfCityDegrees.backgroundColor = .clear
+        self.listOfCityDegrees.isOpaque = false;
     }
 
     func setupView() {
@@ -59,6 +60,7 @@ class CityDetailsViewController: UIViewController {
         self.view.addGestureRecognizer(backMoveRecognizer)
     }
 
+    // NOTE: Swipe right to back to the previous screen
     @IBAction func swipeMade(_ sender: UISwipeGestureRecognizer) {
         navigationController?.popViewController(animated: true)
     }

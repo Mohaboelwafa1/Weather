@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-struct CustomTempDegreeCellModel : Codable {
+struct CustomTempDegreeCellModel: Codable {
 
     var todayDate : String
     var currentTime : String

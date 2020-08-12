@@ -22,6 +22,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
         super.init()
     }
 
+    // NOTE: Convert temperature gotten to celsius
     func ConvertTempreture(temp: Double, type: TempTypeEnumeration) -> Double {
         switch type {
         case .CELSIUS:
@@ -48,6 +49,8 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
 
         }
     }
+
+    // NOTE: Get current date
     func getDate(date: String?) -> String {
         let isoDate = date!
         let dateFormatter = ISO8601DateFormatter()
@@ -59,6 +62,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
         return "\(components.day!) \(month)"
     }
 
+    // NOTE: Get current time
     func getTime(date: String?) -> String {
         var dayNightMode = "am"
         let isoDate = date!
@@ -80,6 +84,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
         }
     }
 
+    // NOTE: Return month name regarding its order
     func getMonthName(month:Int) -> String {
         switch month {
         case 1:
