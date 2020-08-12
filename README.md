@@ -3,6 +3,7 @@ MVVM Pattern used: MVVM
 Swift version: 5.
 iOS target: 13.
 Languages : En , Du.
+Estimation: 2/3 Days.
 
 Most of applications are based on the Model-View-Controller pattern (MVC). MVC is easy to understand , but it isn't perfect. The Model-View-ViewModel pattern offers a better way to organise the application.
 
