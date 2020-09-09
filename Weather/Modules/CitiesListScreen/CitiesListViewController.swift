@@ -14,8 +14,8 @@ class CitiesListViewController: UIViewController {
     @IBOutlet weak var backGroundImage: AsyncImageView!
 
     private let refreshControl = UIRefreshControl()
-    var viewModel = CitiesListViewModel()
-    var cellsModel: [CityCellModel] = [CityCellModel]()
+    private let viewModel = CitiesListViewModel()
+    private var cellsModel: [CityCellModel] = [CityCellModel]()
 
     // NOTE : Track if there is memory leak. If this is called so it is ok.
     deinit {

@@ -30,7 +30,7 @@ class CustomCityCell : UITableViewCell {
         self.setBackgroundImage(imageURL: model.backGroundImage)
     }
 
-    func setBackgroundImage(imageURL : String) {
+    private func setBackgroundImage(imageURL : String) {
         let outerView = UIView(frame: CGRect(x: 10, y: 10, width: self.frame.width - 20, height: self.frame.height - 20))
         outerView.clipsToBounds = false
         outerView.layer.shadowColor = UIColor.black.cgColor
@@ -50,7 +50,7 @@ class CustomCityCell : UITableViewCell {
         self.backgroundView!.addSubview(outerView)
     }
 
-    func downloadImage(url : String, imageview : UIImageView) {
+    private func downloadImage(url : String, imageview : UIImageView) {
         let url = URL(string: url)
         let processor = DownsamplingImageProcessor(size: imageview.bounds.size)
         imageview.kf.indicatorType = .activity

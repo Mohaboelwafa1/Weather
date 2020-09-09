@@ -23,7 +23,7 @@ class CustomTempDegreeCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func setModel(model : CustomTempDegreeCellModel) {
+    internal func setModel(model : CustomTempDegreeCellModel) {
         self.dateLabel.text = String(describing: model.todayDate)
         self.timeLabel.text = String(describing: model.currentTime)
         self.temperatureLabel.text = String(describing: model.temp)

@@ -9,7 +9,7 @@ import SystemConfiguration
 import UIKit
 import Toast_Swift
 
-class Utilities {
+public class Utilities {
 
     private init() {}
     static let shared = Utilities()

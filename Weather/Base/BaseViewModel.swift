@@ -23,7 +23,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
     }
 
     // NOTE: Convert temperature gotten to celsius
-    func ConvertTempreture(temp: Double, type: TempTypeEnumeration) -> Double {
+    internal func ConvertTempreture(temp: Double, type: TempTypeEnumeration) -> Double {
         switch type {
         case .CELSIUS:
             return temp
@@ -36,7 +36,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
         }
     }
 
-    func getTempType(tempType: String) -> TempTypeEnumeration {
+    internal func getTempType(tempType: String) -> TempTypeEnumeration {
         switch tempType {
         case "C":
             return .CELSIUS
@@ -51,7 +51,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
     }
 
     // NOTE: Get current date
-    func getDate(date: String?) -> String {
+    internal func getDate(date: String?) -> String {
         let isoDate = date!
         let dateFormatter = ISO8601DateFormatter()
         let date = dateFormatter.date(from:isoDate)!
@@ -63,7 +63,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
     }
 
     // NOTE: Get current time
-    func getTime(date: String?) -> String {
+    internal func getTime(date: String?) -> String {
         var dayNightMode = "am"
         let isoDate = date!
         let dateFormatter = ISO8601DateFormatter()
@@ -85,7 +85,7 @@ class BaseViewModel: NSObject, BaseViewModel_Protocol {
     }
 
     // NOTE: Return month name regarding its order
-    func getMonthName(month:Int) -> String {
+    internal func getMonthName(month:Int) -> String {
         switch month {
         case 1:
             return R.string.localizable.january()

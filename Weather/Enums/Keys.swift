@@ -6,6 +6,6 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-enum Keys: String {
+internal enum Keys: String {
     case launchedBefore = "launchedBefore"
 }

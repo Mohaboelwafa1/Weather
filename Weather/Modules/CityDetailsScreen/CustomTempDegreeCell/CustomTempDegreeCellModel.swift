@@ -8,10 +8,10 @@
 
 struct CustomTempDegreeCellModel: Codable {
 
-    var todayDate : String
-    var currentTime : String
-    var temp : String
-    var iconImage: String
+    internal var todayDate : String
+    internal var currentTime : String
+    internal var temp : String
+    internal var iconImage: String
 
     enum CodingKeys: String, CodingKey {
         case todayDate = "todayDate"

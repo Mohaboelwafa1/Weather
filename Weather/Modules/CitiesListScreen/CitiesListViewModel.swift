@@ -28,10 +28,10 @@ protocol CitiesListViewModel_Protocol {
 
 class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
 
-    var changeHandler: ChangeHandler?
-    var citiesResponseModel: [CitiesResponseModel]
-    var cellsModel: [CityCellModel]
-    var citiesList: Results<CitiesDBModel>?
+    internal var changeHandler: ChangeHandler?
+    internal var citiesResponseModel: [CitiesResponseModel]
+    internal var cellsModel: [CityCellModel]
+    internal var citiesList: Results<CitiesDBModel>?
 
     override init() {
         citiesResponseModel = [CitiesResponseModel]()
@@ -40,7 +40,7 @@ class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
         super.init()
     }
 
-    func prepareCellModel() -> [CityCellModel] {
+    internal func prepareCellModel() -> [CityCellModel] {
 
         guard self.citiesList != nil else {return cellsModel}
 
@@ -60,13 +60,13 @@ class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
         return cellsModel
     }
 
-    func getCitiesListOffline() -> Results<CitiesDBModel>? {
+    internal func getCitiesListOffline() -> Results<CitiesDBModel>? {
         let realm = try! Realm()
         citiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
         return citiesList
     }
 
-    func getCitiesList(completionHandler: @escaping (Results<CitiesDBModel>?, Int, Error_Response_Model) -> Void) {
+    internal func getCitiesList(completionHandler: @escaping (Results<CitiesDBModel>?, Int, Error_Response_Model) -> Void) {
         APIManager().GetCitiesList(completionHandler: {
             (result, statusCode, errorModel) in
 

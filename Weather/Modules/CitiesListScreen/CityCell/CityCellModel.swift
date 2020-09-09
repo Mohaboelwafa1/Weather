@@ -8,10 +8,10 @@
 
 struct CityCellModel: Codable {
 
-    var currentTime : String
-    var cityName : String
-    var temp : String
-    var backGroundImage: String
+    internal var currentTime : String
+    internal var cityName : String
+    internal var temp : String
+    internal var backGroundImage: String
 
     enum CodingKeys: String, CodingKey {
         case currentTime = "currentTime"

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DroppingFramesHelper: NSObject {
+public class DroppingFramesHelper: NSObject {
 
     private var firstTime: TimeInterval = 0.0
     private var lastTime: TimeInterval = 0.0

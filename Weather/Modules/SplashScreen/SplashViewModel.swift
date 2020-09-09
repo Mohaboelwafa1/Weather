@@ -22,13 +22,13 @@ protocol SplashViewModel_Protocol {
 
 class SplashViewModel: NSObject, SplashViewModel_Protocol {
 
-    var changeHandler: ChangeHandler?
+    internal var changeHandler: ChangeHandler?
 
     override init() {
         super.init()
     }
 
-    func getCitiesList(completionHandler: @escaping (Results<CitiesDBModel>?, Int, Error_Response_Model) -> Void) {
+    internal func getCitiesList(completionHandler: @escaping (Results<CitiesDBModel>?, Int, Error_Response_Model) -> Void) {
         APIManager().GetCitiesList(completionHandler: {
             (result, statusCode, errorModel) in
             

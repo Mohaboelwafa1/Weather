@@ -11,7 +11,7 @@ import UIKit
 class SplashViewController: UIViewController {
 
     @IBOutlet weak var launchScreenBGImage: AsyncImageView!
-    var viewModel = SplashViewModel()
+    private let viewModel = SplashViewModel()
 
     // NOTE : Track if there is memory leak. If this is called so it is ok.
     deinit {

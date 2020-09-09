@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //  List of End points names
 
-enum EndPoint {
+internal enum EndPoint {
     case citiesList
     var path:String
     {

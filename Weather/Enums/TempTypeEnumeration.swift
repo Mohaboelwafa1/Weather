@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //  Group all types of temperature in one place
 
-enum TempTypeEnumeration {
+internal enum TempTypeEnumeration {
     case KELVIN
     case FAHRENHEIT
     case CELSIUS

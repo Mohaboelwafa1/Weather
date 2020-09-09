@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mohammed hassan. All rights reserved.
 //
 
-struct BaseApi {
+internal struct BaseApi {
     // NOTE: THE REAL SERVER
     static let mainPath = "https://us-central1-mobile-assignment-server.cloudfunctions.net"
 }

@@ -21,9 +21,9 @@ protocol CityDetailsViewModel_Protocol {
 }
 
 class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
-    var changeHandler: ChangeHandler?
-    var degreesList: Results<CitiesDBModel>?
-    var cellsModel: [CustomTempDegreeCellModel]
+    internal var changeHandler: ChangeHandler?
+    internal var degreesList: Results<CitiesDBModel>?
+    internal var cellsModel: [CustomTempDegreeCellModel]
 
     override init() {
         degreesList = nil
@@ -31,7 +31,7 @@ class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
         super.init()
     }
 
-    func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel] {
+    internal func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel] {
         degreesList = getCityData(cityName: cityName)
         guard degreesList != nil else {return cellsModel}
 
@@ -49,13 +49,13 @@ class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
         self.changeHandler?()
         return cellsModel
     }
-    func getCityData(cityName: String) -> Results<CitiesDBModel>? {
+    internal func getCityData(cityName: String) -> Results<CitiesDBModel>? {
         let realm = try! Realm()
         let degreesList = realm.objects(CitiesDBModel.self).filter("cityName = '\(cityName)'").sorted(byKeyPath: "date", ascending: true)
         return degreesList
     }
 
-    func getImageName(temp: Double) -> String {
+    internal func getImageName(temp: Double) -> String {
         switch temp {
         case let temp where temp <= 22.5:
             return R.image.snowingIcon()!.accessibilityIdentifier!

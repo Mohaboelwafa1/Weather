@@ -13,10 +13,10 @@ class CityDetailsViewController: UIViewController {
     @IBOutlet weak var listOfCityDegrees : UITableView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var backGroundImage: AsyncImageView!
-    
-    var cityName: String?
-    var viewModel = CityDetailsViewModel()
-    var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
+
+    internal var cityName: String?
+    private let viewModel = CityDetailsViewModel()
+    private var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
 
     // NOTE : Track if there is memory leak. If this is called so it is ok.
     deinit {
