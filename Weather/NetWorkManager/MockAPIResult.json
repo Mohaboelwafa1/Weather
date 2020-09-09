@@ -1,0 +1,326 @@
+[
+    {
+        "date": "2020-09-10T04:00:00+00:00",
+        "city": {
+            "name": "Barcelona",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/barcelona.jpg?alt=media&token=78363b9d-3c33-432c-9bf8-f60786153b13"
+        },
+        "tempType": "F",
+        "temp": 72.6
+    },
+    {
+        "date": "2020-09-10T04:00:00+00:00",
+        "city": {
+            "name": "Tokyo",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/tokyo.jpg?alt=media&token=1ebb10df-b39a-4657-a00c-99219ea28d10"
+        },
+        "tempType": "C",
+        "temp": 29.71
+    },
+    {
+        "date": "2020-09-10T16:00:00+00:00",
+        "city": {
+            "name": "Barcelona",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/barcelona.jpg?alt=media&token=78363b9d-3c33-432c-9bf8-f60786153b13"
+        },
+        "tempType": "F",
+        "temp": 84.01
+    },
+    {
+        "date": "2020-09-10T04:00:00+00:00",
+        "city": {
+            "name": "Budapest",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/budapest.jpg?alt=media&token=d2bff16e-6e11-433c-89ee-3481043636b5"
+        },
+        "tempType": "F",
+        "temp": 74.97
+    },
+    {
+        "date": "2020-09-10T12:00:00+00:00",
+        "city": {
+            "name": "San Francisco",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/san_francisco.jpg?alt=media&token=3192e915-9a72-4342-b247-072b11ca4a10"
+        },
+        "tempType": "K",
+        "temp": 293.39
+    },
+    {
+        "date": "2020-09-10T20:00:00+00:00",
+        "city": {
+            "name": "Barcelona",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/barcelona.jpg?alt=media&token=78363b9d-3c33-432c-9bf8-f60786153b13"
+        },
+        "tempType": "C",
+        "temp": 26.22
+    },
+    {
+        "date": "2020-09-10T04:00:00+00:00",
+        "city": {
+            "name": "Amsterdam",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/amsterdam.jpg?alt=media&token=98d29e95-1cac-400b-bb7b-9290fea8d508"
+        },
+        "tempType": "F",
+        "temp": 77.87
+    },
+    {
+        "date": "2020-09-10T16:00:00+00:00",
+        "city": {
+            "name": "Tokyo",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/tokyo.jpg?alt=media&token=1ebb10df-b39a-4657-a00c-99219ea28d10"
+        },
+        "tempType": "F",
+        "temp": 77.12
+    },
+    {
+        "date": "2020-09-10T20:00:00+00:00",
+        "city": {
+            "name": "Budapest",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/budapest.jpg?alt=media&token=d2bff16e-6e11-433c-89ee-3481043636b5"
+        },
+        "tempType": "F",
+        "temp": 75.05
+    },
+    {
+        "date": "2020-09-10T08:00:00+00:00",
+        "city": {
+            "name": "Budapest",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/budapest.jpg?alt=media&token=d2bff16e-6e11-433c-89ee-3481043636b5"
+        },
+        "tempType": "F",
+        "temp": 76.08
+    },
+    {
+        "date": "2020-09-10T16:00:00+00:00",
+        "city": {
+            "name": "Hong Kong",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/hong_kong.jpg?alt=media&token=dd206090-d3a8-4338-b57b-6d6df37cdd6f"
+        },
+        "tempType": "K",
+        "temp": 295.84
+    },
+    {
+        "date": "2020-09-10T04:00:00+00:00",
+        "city": {
+            "name": "San Francisco",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/san_francisco.jpg?alt=media&token=3192e915-9a72-4342-b247-072b11ca4a10"
+        },
+        "tempType": "K",
+        "temp": 301.48
+    },
+    {
+        "date": "2020-09-10T08:00:00+00:00",
+        "city": {
+            "name": "Hong Kong",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/hong_kong.jpg?alt=media&token=dd206090-d3a8-4338-b57b-6d6df37cdd6f"
+        },
+        "tempType": "C",
+        "temp": 29.56
+    },
+    {
+        "date": "2020-09-10T20:00:00+00:00",
+        "city": {
+            "name": "Tokyo",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/tokyo.jpg?alt=media&token=1ebb10df-b39a-4657-a00c-99219ea28d10"
+        },
+        "tempType": "K",
+        "temp": 293.73
+    },
+    {
+        "date": "2020-09-10T08:00:00+00:00",
+        "city": {
+            "name": "Amsterdam",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/amsterdam.jpg?alt=media&token=98d29e95-1cac-400b-bb7b-9290fea8d508"
+        },
+        "tempType": "K",
+        "temp": 301.65
+    },
+    {
+        "date": "2020-09-10T20:00:00+00:00",
+        "city": {
+            "name": "Amsterdam",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/amsterdam.jpg?alt=media&token=98d29e95-1cac-400b-bb7b-9290fea8d508"
+        },
+        "tempType": "F",
+        "temp": 79.39
+    },
+    {
+        "date": "2020-09-10T20:00:00+00:00",
+        "city": {
+            "name": "San Francisco",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/san_francisco.jpg?alt=media&token=3192e915-9a72-4342-b247-072b11ca4a10"
+        },
+        "tempType": "C",
+        "temp": 24.03
+    },
+    {
+        "date": "2020-09-10T16:00:00+00:00",
+        "city": {
+            "name": "Amsterdam",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/amsterdam.jpg?alt=media&token=98d29e95-1cac-400b-bb7b-9290fea8d508"
+        },
+        "tempType": "C",
+        "temp": 29.31
+    },
+    {
+        "date": "2020-09-10T08:00:00+00:00",
+        "city": {
+            "name": "Tokyo",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/tokyo.jpg?alt=media&token=1ebb10df-b39a-4657-a00c-99219ea28d10"
+        },
+        "tempType": "C",
+        "temp": 20.43
+    },
+    {
+        "date": "2020-09-10T00:00:00+00:00",
+        "city": {
+            "name": "Amsterdam",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/amsterdam.jpg?alt=media&token=98d29e95-1cac-400b-bb7b-9290fea8d508"
+        },
+        "tempType": "K",
+        "temp": 301.83
+    },
+    {
+        "date": "2020-09-10T12:00:00+00:00",
+        "city": {
+            "name": "Tokyo",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/tokyo.jpg?alt=media&token=1ebb10df-b39a-4657-a00c-99219ea28d10"
+        },
+        "tempType": "F",
+        "temp": 70.11
+    },
+    {
+        "date": "2020-09-10T16:00:00+00:00",
+        "city": {
+            "name": "San Francisco",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/san_francisco.jpg?alt=media&token=3192e915-9a72-4342-b247-072b11ca4a10"
+        },
+        "tempType": "C",
+        "temp": 28.07
+    },
+    {
+        "date": "2020-09-10T12:00:00+00:00",
+        "city": {
+            "name": "Barcelona",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/barcelona.jpg?alt=media&token=78363b9d-3c33-432c-9bf8-f60786153b13"
+        },
+        "tempType": "C",
+        "temp": 20.86
+    },
+    {
+        "date": "2020-09-10T00:00:00+00:00",
+        "city": {
+            "name": "San Francisco",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/san_francisco.jpg?alt=media&token=3192e915-9a72-4342-b247-072b11ca4a10"
+        },
+        "tempType": "C",
+        "temp": 22.46
+    },
+    {
+        "date": "2020-09-10T00:00:00+00:00",
+        "city": {
+            "name": "Hong Kong",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/hong_kong.jpg?alt=media&token=dd206090-d3a8-4338-b57b-6d6df37cdd6f"
+        },
+        "tempType": "K",
+        "temp": 293.48
+    },
+    {
+        "date": "2020-09-10T12:00:00+00:00",
+        "city": {
+            "name": "Hong Kong",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/hong_kong.jpg?alt=media&token=dd206090-d3a8-4338-b57b-6d6df37cdd6f"
+        },
+        "tempType": "F",
+        "temp": 72.72
+    },
+    {
+        "date": "2020-09-10T00:00:00+00:00",
+        "city": {
+            "name": "Tokyo",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/tokyo.jpg?alt=media&token=1ebb10df-b39a-4657-a00c-99219ea28d10"
+        },
+        "tempType": "K",
+        "temp": 295.69
+    },
+    {
+        "date": "2020-09-10T00:00:00+00:00",
+        "city": {
+            "name": "Barcelona",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/barcelona.jpg?alt=media&token=78363b9d-3c33-432c-9bf8-f60786153b13"
+        },
+        "tempType": "F",
+        "temp": 72.55
+    },
+    {
+        "date": "2020-09-10T00:00:00+00:00",
+        "city": {
+            "name": "Budapest",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/budapest.jpg?alt=media&token=d2bff16e-6e11-433c-89ee-3481043636b5"
+        },
+        "tempType": "K",
+        "temp": 293.17
+    },
+    {
+        "date": "2020-09-10T20:00:00+00:00",
+        "city": {
+            "name": "Hong Kong",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/hong_kong.jpg?alt=media&token=dd206090-d3a8-4338-b57b-6d6df37cdd6f"
+        },
+        "tempType": "K",
+        "temp": 297.41
+    },
+    {
+        "date": "2020-09-10T08:00:00+00:00",
+        "city": {
+            "name": "Barcelona",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/barcelona.jpg?alt=media&token=78363b9d-3c33-432c-9bf8-f60786153b13"
+        },
+        "tempType": "F",
+        "temp": 78.03
+    },
+    {
+        "date": "2020-09-10T04:00:00+00:00",
+        "city": {
+            "name": "Hong Kong",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/hong_kong.jpg?alt=media&token=dd206090-d3a8-4338-b57b-6d6df37cdd6f"
+        },
+        "tempType": "F",
+        "temp": 84.03
+    },
+    {
+        "date": "2020-09-10T12:00:00+00:00",
+        "city": {
+            "name": "Amsterdam",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/amsterdam.jpg?alt=media&token=98d29e95-1cac-400b-bb7b-9290fea8d508"
+        },
+        "tempType": "C",
+        "temp": 23.01
+    },
+    {
+        "date": "2020-09-10T16:00:00+00:00",
+        "city": {
+            "name": "Budapest",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/budapest.jpg?alt=media&token=d2bff16e-6e11-433c-89ee-3481043636b5"
+        },
+        "tempType": "C",
+        "temp": 29.92
+    },
+    {
+        "date": "2020-09-10T12:00:00+00:00",
+        "city": {
+            "name": "Budapest",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/budapest.jpg?alt=media&token=d2bff16e-6e11-433c-89ee-3481043636b5"
+        },
+        "tempType": "F",
+        "temp": 75.1
+    },
+    {
+        "date": "2020-09-10T08:00:00+00:00",
+        "city": {
+            "name": "San Francisco",
+            "picture": "https://firebasestorage.googleapis.com/v0/b/mobile-assignment-server.appspot.com/o/san_francisco.jpg?alt=media&token=3192e915-9a72-4342-b247-072b11ca4a10"
+        },
+        "tempType": "K",
+        "temp": 298.04
+    }
+]

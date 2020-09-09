@@ -14,6 +14,7 @@
 		4C01993B24DEBE6200191E4C /* CustomTempDegreeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */; };
 		4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */; };
 		4C01993F24DEDA2500191E4C /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01993E24DEDA2500191E4C /* SplashViewModel.swift */; };
+		4C14FF4D25091C2C0018FE25 /* MockAPIResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C14FF4C25091C2C0018FE25 /* MockAPIResult.json */; };
 		4C1F67D724E200E500AF3765 /* EndPointEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F67D624E200E500AF3765 /* EndPointEnumeration.swift */; };
 		4C1F67DF24E21D9C00AF3765 /* DroppingFramesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F67DE24E21D9C00AF3765 /* DroppingFramesHelper.swift */; };
 		4C1F67E124E2215300AF3765 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F67E024E2215300AF3765 /* UIImageExtension.swift */; };
@@ -73,6 +74,7 @@
 		4C01993A24DEBE6200191E4C /* CustomTempDegreeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTempDegreeCellModel.swift; sourceTree = "<group>"; };
 		4C01993C24DEBEE200191E4C /* CustomTempDegreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTempDegreeCell.xib; sourceTree = "<group>"; };
 		4C01993E24DEDA2500191E4C /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		4C14FF4C25091C2C0018FE25 /* MockAPIResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockAPIResult.json; sourceTree = "<group>"; };
 		4C1F67D624E200E500AF3765 /* EndPointEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointEnumeration.swift; sourceTree = "<group>"; };
 		4C1F67DE24E21D9C00AF3765 /* DroppingFramesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppingFramesHelper.swift; sourceTree = "<group>"; };
 		4C1F67E024E2215300AF3765 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			children = (
 				4CF92C7724DCCE890095C45A /* OperationalRepository.swift */,
 				4CF92C7C24DCD2010095C45A /* APIManager.swift */,
+				4C14FF4C25091C2C0018FE25 /* MockAPIResult.json */,
 			);
 			path = NetWorkManager;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				4CF92C3824DC90C20095C45A /* Assets.xcassets in Resources */,
 				4CF92C3324DC90BF0095C45A /* Main.storyboard in Resources */,
 				4CF92C6D24DCBC360095C45A /* CustomCityCell.xib in Resources */,
+				4C14FF4D25091C2C0018FE25 /* MockAPIResult.json in Resources */,
 				4C01993D24DEBEE200191E4C /* CustomTempDegreeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

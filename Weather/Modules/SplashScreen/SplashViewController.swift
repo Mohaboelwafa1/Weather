@@ -38,6 +38,13 @@ class SplashViewController: UIViewController {
     }
 
     func fetchWeatherData() {
+        self.viewModel.getCitiesList(completionHandler: {
+            (result, statusCode, errorModel)in
+            UserDefaults.standard.set(true, forKey: Keys.launchedBefore.rawValue)
+        })
+    }
+/*
+    func fetchWeatherData() {
         if Utilities.shared.isConnectedToNetwork() {
             Utilities.shared.ShowIndicator(title: nil, message:  R.string.localizable.pleaseWait(), controller: self)
             DispatchQueue.global(qos: .background).async {
@@ -64,6 +71,7 @@ class SplashViewController: UIViewController {
         }
     }
 
+    */
     func goToCitiesListScreen() {
         // NOTE : Hide the loader
         self.dismiss(animated: false, completion: nil)

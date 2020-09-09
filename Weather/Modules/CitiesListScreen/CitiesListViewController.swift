@@ -65,6 +65,14 @@ class CitiesListViewController: UIViewController {
     }
 
     @objc private func refreshWeatherData(_ sender: Any) {
+        self.viewModel.getCitiesList(completionHandler: {
+            (result, statusCode, errorModel)in
+            self.refreshControl.endRefreshing()
+        })
+    }
+
+    /*
+    @objc private func refreshWeatherData(_ sender: Any) {
         if Utilities.shared.isConnectedToNetwork() {
             DispatchQueue.global(qos: .background).async {
                 self.viewModel.getCitiesList(completionHandler: {
@@ -85,6 +93,7 @@ class CitiesListViewController: UIViewController {
             )
         }
     }
+ */
 
 }
 
