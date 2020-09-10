@@ -11,7 +11,7 @@ import UIKit
 class SplashViewController: UIViewController {
 
     @IBOutlet weak var launchScreenBGImage: AsyncImageView!
-    private let viewModel = SplashViewModel()
+    private var viewModel: SplashViewModel!
 
     // NOTE : Track if there is memory leak. If this is called so it is ok.
     deinit {
@@ -20,6 +20,7 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = SplashViewModel(dbHandler: DBHandler())
         // NOTE : Get notified when there is some changes in the view model and update the UI
         viewModel.changeHandler = { [weak self] in
             self?.goToCitiesListScreen()
@@ -43,6 +44,7 @@ class SplashViewController: UIViewController {
             UserDefaults.standard.set(true, forKey: Keys.launchedBefore.rawValue)
         })
     }
+
 /*
     func fetchWeatherData() {
         if Utilities.shared.isConnectedToNetwork() {
@@ -70,8 +72,8 @@ class SplashViewController: UIViewController {
             }
         }
     }
-
     */
+
     func goToCitiesListScreen() {
         // NOTE : Hide the loader
         self.dismiss(animated: false, completion: nil)

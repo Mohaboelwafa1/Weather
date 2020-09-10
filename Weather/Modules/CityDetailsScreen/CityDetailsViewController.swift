@@ -15,7 +15,7 @@ class CityDetailsViewController: UIViewController {
     @IBOutlet weak var backGroundImage: AsyncImageView!
 
     internal var cityName: String?
-    private let viewModel = CityDetailsViewModel()
+    private var viewModel: CityDetailsViewModel!
     private var cellsModel: [CustomTempDegreeCellModel] = [CustomTempDegreeCellModel]()
 
     // NOTE : Track if there is memory leak. If this is called so it is ok.
@@ -25,6 +25,7 @@ class CityDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = CityDetailsViewModel()
         // NOTE : Get notified when there is some changes in the view model and update the UI
         viewModel.changeHandler = { [weak self] in
             self?.listOfCityDegrees.reloadData()

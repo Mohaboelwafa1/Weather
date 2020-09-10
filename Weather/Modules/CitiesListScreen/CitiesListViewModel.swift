@@ -8,36 +8,38 @@
 
 import RealmSwift
 
-protocol CitiesListViewModel_Protocol {
-
-    typealias ChangeHandler = (() -> Void)
-    var changeHandler: ChangeHandler? { get set }
-    var citiesResponseModel: [CitiesResponseModel] { get }
-    var cellsModel : [CityCellModel] { get set }
-    var citiesList : Results<CitiesDBModel>? { get set }
-
-    func prepareCellModel() -> [CityCellModel]
-    func getCitiesListOffline() -> Results<CitiesDBModel>?
-    func getCitiesList(completionHandler: @escaping (
-        _ ResponseModel:Results<CitiesDBModel>?,
-        _ statusCode : Int,
-        _ error_Response_Model:Error_Response_Model
-        ) -> Void)
-
-}
-
 class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
 
     internal var changeHandler: ChangeHandler?
     internal var citiesResponseModel: [CitiesResponseModel]
     internal var cellsModel: [CityCellModel]
     internal var citiesList: Results<CitiesDBModel>?
+    internal let dbHandler: DBHandler
 
-    override init() {
+    init(dbHandler: DBHandler) {
+        self.dbHandler = dbHandler
         citiesResponseModel = [CitiesResponseModel]()
         cellsModel = [CityCellModel]()
         citiesList = nil
-        super.init()
+    }
+
+    internal func getCitiesListOffline() -> Results<CitiesDBModel>? {
+        let realm = try! Realm()
+        citiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
+        return citiesList
+    }
+
+    internal func getCitiesList(completionHandler: @escaping (Results<CitiesDBModel>?, Int, Error_Response_Model) -> Void) {
+        APIManager().GetCitiesList(completionHandler: {
+            (result, statusCode, errorModel) in
+
+            if result == nil {completionHandler(nil, statusCode, errorModel ?? Error_Response_Model())}
+            self.dbHandler.saveToDB(data: result ?? [CitiesResponseModel()])
+            let realm = try! Realm()
+            let citiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
+            self.cellsModel = self.prepareCellModel()
+            completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
+        })
     }
 
     internal func prepareCellModel() -> [CityCellModel] {
@@ -58,41 +60,6 @@ class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
         }
         self.changeHandler?()
         return cellsModel
-    }
-
-    internal func getCitiesListOffline() -> Results<CitiesDBModel>? {
-        let realm = try! Realm()
-        citiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
-        return citiesList
-    }
-
-    internal func getCitiesList(completionHandler: @escaping (Results<CitiesDBModel>?, Int, Error_Response_Model) -> Void) {
-        APIManager().GetCitiesList(completionHandler: {
-            (result, statusCode, errorModel) in
-
-            if result == nil {completionHandler(nil, statusCode, errorModel ?? Error_Response_Model())}
-
-            let realm = try! Realm()
-            try! realm.write {
-                realm.deleteAll()
-            }
-
-                for city in result! {
-                    let cityModel = CitiesDBModel()
-                    cityModel.date = city.date
-                    cityModel.cityName = city.city?.name
-                    cityModel.cityPicture = city.city?.picture
-                    cityModel.tempType = city.tempType
-                    cityModel.temp = city.temp ?? 0
-                    try! realm.write {
-                        realm.add(cityModel)
-                    }
-                }
-
-            let citiesList = realm.objects(CitiesDBModel.self).distinct(by: ["cityName"]).sorted(byKeyPath: "cityName", ascending: true)
-            self.cellsModel = self.prepareCellModel()
-            completionHandler(citiesList, statusCode, errorModel ?? Error_Response_Model())
-        })
     }
 
 }

@@ -8,18 +8,6 @@
 
 import RealmSwift
 
-protocol CityDetailsViewModel_Protocol {
-    typealias ChangeHandler = (() -> Void)
-    var changeHandler: ChangeHandler? { get set }
-    var degreesList : Results<CitiesDBModel>? { get set }
-    var cellsModel : [CustomTempDegreeCellModel] { get set }
-
-    func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel]
-    func getCityData(cityName: String) -> Results<CitiesDBModel>?
-    func getImageName(temp: Double) -> String
-
-}
-
 class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
     internal var changeHandler: ChangeHandler?
     internal var degreesList: Results<CitiesDBModel>?
@@ -49,6 +37,7 @@ class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
         self.changeHandler?()
         return cellsModel
     }
+
     internal func getCityData(cityName: String) -> Results<CitiesDBModel>? {
         let realm = try! Realm()
         let degreesList = realm.objects(CitiesDBModel.self).filter("cityName = '\(cityName)'").sorted(byKeyPath: "date", ascending: true)

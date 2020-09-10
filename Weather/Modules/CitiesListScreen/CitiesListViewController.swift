@@ -13,8 +13,8 @@ class CitiesListViewController: UIViewController {
     @IBOutlet weak var listOfCitiesTable : UITableView!
     @IBOutlet weak var backGroundImage: AsyncImageView!
 
+    private var viewModel: CitiesListViewModel!
     private let refreshControl = UIRefreshControl()
-    private let viewModel = CitiesListViewModel()
     private var cellsModel: [CityCellModel] = [CityCellModel]()
 
     // NOTE : Track if there is memory leak. If this is called so it is ok.
@@ -24,6 +24,7 @@ class CitiesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = CitiesListViewModel(dbHandler: DBHandler())
         // NOTE : Get notified when there is some changes in the view model and update the UI
         viewModel.changeHandler = { [weak self] in
             self?.listOfCitiesTable.reloadData()

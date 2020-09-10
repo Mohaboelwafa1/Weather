@@ -42,27 +42,12 @@ class CustomCityCell : UITableViewCell {
         let imageView = UIImageView(frame: outerView.bounds)
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
-        self.downloadImage(url: imageURL, imageview: imageView)
+        ImageDownloader.downloadImage(url: imageURL, imageview: imageView)
         imageView.alpha = 0.9
 
         outerView.addSubview(imageView)
         self.backgroundView = UIView()
         self.backgroundView!.addSubview(outerView)
-    }
-
-    private func downloadImage(url : String, imageview : UIImageView) {
-        let url = URL(string: url)
-        let processor = DownsamplingImageProcessor(size: imageview.bounds.size)
-        imageview.kf.indicatorType = .activity
-        imageview.kf.setImage(
-            with: url,
-            placeholder: R.image.cityPlaceHolder(),
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
     }
 
 }
