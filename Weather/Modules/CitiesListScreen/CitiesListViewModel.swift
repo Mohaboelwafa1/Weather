@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
+class CitiesListViewModel: CitiesListViewModel_Protocol {
 
     internal var changeHandler: ChangeHandler?
     internal var citiesResponseModel: [CitiesResponseModel]
@@ -50,10 +50,10 @@ class CitiesListViewModel: BaseViewModel, CitiesListViewModel_Protocol {
             var model : CityCellModel = CityCellModel()
             let dateAndTime = (row.date)!
             let temp = row.temp
-            let celsuistemp = self.ConvertTempreture(temp: temp, type: self.getTempType(tempType: (row.tempType)!))
+            let celsuistemp = TempConverter.convertTempreture(temp: temp, type: TempType.getTempType(tempType: (row.tempType)!))
 
             model.cityName = row.cityName ?? R.string.localizable.loading()
-            model.currentTime = self.getDate(date: dateAndTime)
+            model.currentTime = DateGetter.getDate(date: dateAndTime)
             model.temp = "\(celsuistemp) °"
             model.backGroundImage = row.cityPicture ?? ""
             cellsModel.append(model)

@@ -93,4 +93,3 @@ extension CityDetailsViewController: UITableViewDelegate {
     }
 
 }
-

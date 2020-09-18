@@ -16,5 +16,4 @@ protocol CityDetailsViewModel_Protocol {
 
     func prepareCellModel(cityName: String) -> [CustomTempDegreeCellModel]
     func getCityData(cityName: String) -> Results<CitiesDBModel>?
-    func getImageName(temp: Double) -> String
 }

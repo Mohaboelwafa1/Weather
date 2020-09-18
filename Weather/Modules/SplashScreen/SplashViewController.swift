@@ -45,6 +45,14 @@ class SplashViewController: UIViewController {
         })
     }
 
+    func goToCitiesListScreen() {
+        // NOTE : Hide the loader
+        self.dismiss(animated: false, completion: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let cityListViewController = storyBoard.instantiateViewController(withIdentifier: "CitiesListViewController") as! CitiesListViewController
+        self.navigationController?.pushViewController(cityListViewController, animated: true)
+    }
+
 /*
     func fetchWeatherData() {
         if Utilities.shared.isConnectedToNetwork() {
@@ -73,14 +81,5 @@ class SplashViewController: UIViewController {
         }
     }
     */
-
-    func goToCitiesListScreen() {
-        // NOTE : Hide the loader
-        self.dismiss(animated: false, completion: nil)
-
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let cityListViewController = storyBoard.instantiateViewController(withIdentifier: "CitiesListViewController") as! CitiesListViewController
-        self.navigationController?.pushViewController(cityListViewController, animated: true)
-    }
 
 }

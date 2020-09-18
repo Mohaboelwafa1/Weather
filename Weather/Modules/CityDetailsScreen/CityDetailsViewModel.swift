@@ -27,11 +27,11 @@ class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
             var model : CustomTempDegreeCellModel = CustomTempDegreeCellModel()
             let dateAndTime = (row.date)!
             let temp = row.temp
-            let celsuisDegree = self.ConvertTempreture(temp: temp, type: self.getTempType(tempType: (row.tempType)!))
-            model.currentTime = self.getTime(date: dateAndTime)
-            model.todayDate = self.getDate(date: dateAndTime)
+            let celsuisDegree = TempConverter.convertTempreture(temp: temp, type: TempType.getTempType(tempType: (row.tempType)!))
+            model.currentTime = TimeGetter.getTime(time: dateAndTime)
+            model.todayDate = DateGetter.getDate(date: dateAndTime)
             model.temp = "\(celsuisDegree) °"
-            model.iconImage = self.getImageName(temp: celsuisDegree)
+            model.iconImage = GetImageNameForTemp.getImageName(temp: celsuisDegree)
             cellsModel.append(model)
         }
         self.changeHandler?()
@@ -44,19 +44,5 @@ class CityDetailsViewModel: BaseViewModel, CityDetailsViewModel_Protocol {
         return degreesList
     }
 
-    internal func getImageName(temp: Double) -> String {
-        switch temp {
-        case let temp where temp <= 22.5:
-            return R.image.snowingIcon()!.accessibilityIdentifier!
-        case let temp where temp <= 25.0 && temp > 22.5:
-            return R.image.cloudyIcon()!.accessibilityIdentifier!
-        case let temp where temp <= 27.5 && temp > 25.0:
-            return R.image.rainyIcon()!.accessibilityIdentifier!
-        case let temp where temp > 27.5:
-            return R.image.sunnyIcon()!.accessibilityIdentifier!
-        default:
-            return R.image.unknownWeather()!.accessibilityIdentifier!
-        }
-    }
 }
 

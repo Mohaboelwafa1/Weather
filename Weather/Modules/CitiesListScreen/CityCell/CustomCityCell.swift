@@ -27,27 +27,7 @@ class CustomCityCell : UITableViewCell {
         self.timeLabel.text = String(describing: model.currentTime)
         self.cityNameLabel.text = String(describing: model.cityName)
         self.temperatureLabel.text = String(describing: model.temp)
-        self.setBackgroundImage(imageURL: model.backGroundImage)
-    }
-
-    private func setBackgroundImage(imageURL : String) {
-        let outerView = UIView(frame: CGRect(x: 10, y: 10, width: self.frame.width - 20, height: self.frame.height - 20))
-        outerView.clipsToBounds = false
-        outerView.layer.shadowColor = UIColor.black.cgColor
-        outerView.layer.shadowOpacity = 1
-        outerView.layer.shadowOffset = CGSize.zero
-        outerView.layer.shadowRadius = 10
-        outerView.layer.shadowPath = UIBezierPath(roundedRect: outerView.bounds, cornerRadius: 10).cgPath
-
-        let imageView = UIImageView(frame: outerView.bounds)
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 10
-        ImageDownloader.downloadImage(url: imageURL, imageview: imageView)
-        imageView.alpha = 0.9
-
-        outerView.addSubview(imageView)
-        self.backgroundView = UIView()
-        self.backgroundView!.addSubview(outerView)
+        CellBackgroundImageSetter.setBackgroundImage(imageURL: model.backGroundImage, cell: self)
     }
 
 }
