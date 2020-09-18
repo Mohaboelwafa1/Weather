@@ -12,7 +12,11 @@ protocol OperationalRepository {}
 
 extension OperationalRepository {
 
-    internal func excuteServerOperation(url : String, way: HTTPMethod, completionHandler: @escaping ( _ result: AnyObject, _ statusCode : Int, _ errormodel:AnyObject) -> Void) -> Void{
+    internal func excuteServerOperation(
+        url : String,
+        way: HTTPMethod,
+        completionHandler: @escaping ( _ result: AnyObject, _ statusCode : Int, _ errormodel:AnyObject) -> Void
+        ) -> Void {
 
         if Reachability.isConnectedToNetwork() == true {
             AF.request(url, method: way, encoding: JSONEncoding.default).responseJSON {

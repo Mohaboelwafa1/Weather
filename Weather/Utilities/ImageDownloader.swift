@@ -22,4 +22,5 @@ class ImageDownloader{
                 .cacheOriginalImage
             ])
     }
+
 }
