@@ -27,4 +27,18 @@ class DBHandler {
             }
         }
     }
+
+    func readJSONFromFile(fileName: String) -> Data? {
+        var data: Data?
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
+            do {
+                let fileUrl = URL(fileURLWithPath: path)
+                data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
+                return data
+            } catch {
+            }
+        }
+        return data
+    }
+
 }

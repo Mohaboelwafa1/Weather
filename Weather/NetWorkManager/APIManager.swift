@@ -30,7 +30,6 @@ class APIManager: NSObject, OperationalRepository {
 //        } )
 //    }
 
-
     internal func GetCitiesList(
         completionHandler: @escaping (
         _ result:[CitiesResponseModel]?,
@@ -41,28 +40,12 @@ class APIManager: NSObject, OperationalRepository {
         let jsonDecoder = JSONDecoder()
         var responseModel : [CitiesResponseModel]!
         var errorModel : Error_Response_Model!
+        let dbHandler: DBHandler = DBHandler()
 
-        let dataModel = APIManager.readJSONFromFile(fileName: "MockAPIResult")
+        let dataModel = dbHandler.readJSONFromFile(fileName: "MockAPIResult")
         responseModel = try? jsonDecoder.decode([CitiesResponseModel].self, from: dataModel!)
         errorModel = nil
         completionHandler(responseModel, 200, errorModel)
-    }
-
-}
-
-extension APIManager {
-
-    static func readJSONFromFile(fileName: String) -> Data? {
-        var data: Data?
-        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
-            do {
-                let fileUrl = URL(fileURLWithPath: path)
-                data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
-                return data
-            } catch {
-            }
-        }
-        return data
     }
 
 }
