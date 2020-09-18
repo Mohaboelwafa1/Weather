@@ -7,6 +7,9 @@
 //
 
 import Foundation
+
+protocol BaseViewModel_Protocol {}
+
 class BaseViewModel: NSObject, BaseViewModel_Protocol {
     override init() {
         super.init()

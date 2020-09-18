@@ -39,7 +39,6 @@
 		4CF51198250A3008001608A0 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF51197250A3008001608A0 /* ImageDownloader.swift */; };
 		4CF5119A250A30FD001608A0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF51199250A30FD001608A0 /* Reachability.swift */; };
 		4CF5119C250A3248001608A0 /* CityDetailsViewModel_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5119B250A3248001608A0 /* CityDetailsViewModel_Protocol.swift */; };
-		4CF5119E250A3300001608A0 /* BaseViewModel_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5119D250A3300001608A0 /* BaseViewModel_Protocol.swift */; };
 		4CF92C2C24DC90BF0095C45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */; };
 		4CF92C2E24DC90BF0095C45A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */; };
 		4CF92C3324DC90BF0095C45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF92C3124DC90BF0095C45A /* Main.storyboard */; };
@@ -116,7 +115,6 @@
 		4CF51197250A3008001608A0 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		4CF51199250A30FD001608A0 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		4CF5119B250A3248001608A0 /* CityDetailsViewModel_Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewModel_Protocol.swift; sourceTree = "<group>"; };
-		4CF5119D250A3300001608A0 /* BaseViewModel_Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel_Protocol.swift; sourceTree = "<group>"; };
 		4CF92C2824DC90BF0095C45A /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,14 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				4CE89C9224DF3F3F00B0F192 /* BaseViewModel.swift */,
-				4CF5119D250A3300001608A0 /* BaseViewModel_Protocol.swift */,
 				4CF92C7E24DCD2810095C45A /* BaseApi.swift */,
-				4C2FA41225151EFF00E6C924 /* TempConverter.swift */,
-				4C2FA41425151F7A00E6C924 /* TempType.swift */,
-				4C2FA416251520BF00E6C924 /* TimeGetter.swift */,
-				4C2FA4182515219D00E6C924 /* DateGetter.swift */,
-				4C2FA41A2515240900E6C924 /* MonthNameGetter.swift */,
-				4C2FA41E251528EC00E6C924 /* GetImageNameForTemp.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -271,6 +262,37 @@
 			path = CityDetailsScreen;
 			sourceTree = "<group>";
 		};
+		4C2FA42025153E7200E6C924 /* TempHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				4C2FA41225151EFF00E6C924 /* TempConverter.swift */,
+				4C2FA41425151F7A00E6C924 /* TempType.swift */,
+			);
+			path = TempHandlers;
+			sourceTree = "<group>";
+		};
+		4C2FA42125153E9800E6C924 /* Date&TimeHandler */ = {
+			isa = PBXGroup;
+			children = (
+				4C2FA416251520BF00E6C924 /* TimeGetter.swift */,
+				4C2FA4182515219D00E6C924 /* DateGetter.swift */,
+				4C2FA41A2515240900E6C924 /* MonthNameGetter.swift */,
+			);
+			path = "Date&TimeHandler";
+			sourceTree = "<group>";
+		};
+		4C2FA42225153EB300E6C924 /* ImagesHandler */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F67E024E2215300AF3765 /* UIImageExtension.swift */,
+				4C1F67E224E2220000AF3765 /* AsyncImageView.swift */,
+				4CF51197250A3008001608A0 /* ImageDownloader.swift */,
+				4C2FA41C2515272000E6C924 /* CellBackgroundImageSetter.swift */,
+				4C2FA41E251528EC00E6C924 /* GetImageNameForTemp.swift */,
+			);
+			path = ImagesHandler;
+			sourceTree = "<group>";
+		};
 		4CF92C1F24DC90BF0095C45A = {
 			isa = PBXGroup;
 			children = (
@@ -297,13 +319,16 @@
 		4CF92C2A24DC90BF0095C45A /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				4C2FA42225153EB300E6C924 /* ImagesHandler */,
+				4C2FA42125153E9800E6C924 /* Date&TimeHandler */,
+				4C2FA42025153E7200E6C924 /* TempHandlers */,
 				4C1F67DA24E202A400AF3765 /* Modules */,
 				4C1F67D924E2026400AF3765 /* Enums */,
 				4C1F67D824E2025200AF3765 /* Base */,
 				4CF92C7924DCCED40095C45A /* Utilities */,
 				4CF92C7624DCCE3F0095C45A /* NetWorkManager */,
 				4CF92C5F24DCB1010095C45A /* View */,
-				4CF92C5E24DCB0EA0095C45A /* Models */,
+				4CF92C5E24DCB0EA0095C45A /* DataModels */,
 				4CF92C2B24DC90BF0095C45A /* AppDelegate.swift */,
 				4CF92C2D24DC90BF0095C45A /* SceneDelegate.swift */,
 				4CF92C3724DC90C20095C45A /* Assets.xcassets */,
@@ -332,7 +357,7 @@
 			path = WeatherUITests;
 			sourceTree = "<group>";
 		};
-		4CF92C5E24DCB0EA0095C45A /* Models */ = {
+		4CF92C5E24DCB0EA0095C45A /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				4CF92C6124DCB19F0095C45A /* CitiesResponseModel.swift */,
@@ -340,7 +365,7 @@
 				4CF92C7424DCCBD80095C45A /* Error_Response_Model.swift */,
 				4C375E6D24DE11F400651495 /* CitiesDBModel.swift */,
 			);
-			path = Models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		4CF92C5F24DCB1010095C45A /* View */ = {
@@ -378,10 +403,6 @@
 			children = (
 				4CF92C7A24DCCEE90095C45A /* Utilities.swift */,
 				4C1F67DE24E21D9C00AF3765 /* DroppingFramesHelper.swift */,
-				4C1F67E024E2215300AF3765 /* UIImageExtension.swift */,
-				4C1F67E224E2220000AF3765 /* AsyncImageView.swift */,
-				4CF51197250A3008001608A0 /* ImageDownloader.swift */,
-				4C2FA41C2515272000E6C924 /* CellBackgroundImageSetter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -667,7 +688,6 @@
 				4C01993F24DEDA2500191E4C /* SplashViewModel.swift in Sources */,
 				4CF51198250A3008001608A0 /* ImageDownloader.swift in Sources */,
 				4C01993B24DEBE6200191E4C /* CustomTempDegreeCellModel.swift in Sources */,
-				4CF5119E250A3300001608A0 /* BaseViewModel_Protocol.swift in Sources */,
 				4CF92C7B24DCCEE90095C45A /* Utilities.swift in Sources */,
 				4C01993924DEBE1900191E4C /* CustomTempDegreeCell.swift in Sources */,
 				4CF92C6F24DCBFF10095C45A /* CityCellModel.swift in Sources */,
